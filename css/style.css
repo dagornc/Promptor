@@ -1,0 +1,298 @@
+/* TEST DE DIAGNOSTIC */
+/*
+body {
+    background-color: red !important; 
+}
+*/
+
+/* Fichier CSS principal */ 
+
+/* Reset CSS simple */
+/* Retiré car nous décommentons */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; 
+}
+
+
+/* Variables globales */
+:root {
+    --naval-dark-blue: #002B5B;
+    --naval-light-grey: #f0f0f0;
+    --naval-medium-grey: #dddddd;
+    --naval-text-grey: #333333;
+    --naval-red-accent: #E60028;
+    --white: #ffffff;
+    --black: #000000;
+    /* Ajout de Courier New pour test */
+    /* --font-primary: 'Courier New', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */ /* Test retiré */
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Retour à la pile standard */
+    --base-font-size: 1.6rem;
+    --h1-font-size: 3.2rem;
+    --h2-font-size: 2.4rem;
+    --sidebar-width: 280px;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--base-font-size);
+    line-height: 1.6;
+    color: var(--naval-text-grey);
+    background-color: var(--white);
+    display: flex; /* Décommenté */
+    flex-direction: column; /* Décommenté */
+    min-height: 100vh; /* Décommenté */
+}
+
+/* header, page-wrapper, sidebar, main, footer, etc. décommentés */
+
+header {
+    background-color: var(--white); 
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--naval-light-grey);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+header img.logo {
+    height: 40px; 
+    width: auto;
+}
+
+header h1 {
+    font-size: var(--h1-font-size);
+    color: var(--naval-dark-blue);
+    font-weight: bold; 
+}
+
+.page-wrapper {
+    display: flex;
+    flex: 1; 
+}
+
+aside.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--white); 
+    padding: 1rem 0; 
+    border-right: 1px solid var(--naval-light-grey); 
+    overflow-y: auto; 
+}
+
+aside.sidebar nav h2 {
+    font-size: var(--h2-font-size);
+    color: var(--naval-dark-blue);
+    margin-bottom: 1rem; 
+    border-bottom: 1px solid var(--naval-light-grey); 
+    padding-bottom: 1rem;
+    padding-left: 2rem; 
+    padding-right: 2rem;
+}
+
+aside.sidebar nav ul {
+    list-style: none;
+}
+
+aside.sidebar nav ul li {
+     margin-bottom: 0;
+}
+
+aside.sidebar nav ul li details summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--white);
+    background-color: var(--naval-dark-blue);
+    padding: 1rem 2rem; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    transition: background-color 0.2s ease-in-out;
+    position: relative; 
+}
+
+aside.sidebar nav ul li details summary:hover {
+    background-color: #001f45;
+}
+
+aside.sidebar nav ul li details summary::after {
+    content: ''; 
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
+    transform: rotate(-45deg); 
+    transition: transform 0.2s ease-in-out;
+    margin-left: 10px; 
+}
+
+aside.sidebar nav ul li details[open] summary::after {
+    transform: rotate(45deg); 
+}
+
+aside.sidebar nav ul ul {
+    margin-top: 0;
+    margin-left: 0; 
+    list-style-type: none;
+    padding-left: 0;
+}
+
+aside.sidebar nav ul ul li a {
+    text-decoration: none;
+    color: var(--naval-text-grey);
+    display: block;
+    padding: 0.8rem 2rem 0.8rem 3rem;
+    border-bottom: 1px solid var(--naval-light-grey);
+    border-radius: 0;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
+}
+
+aside.sidebar nav ul ul li a:hover {
+    text-decoration: underline;
+    background-color: transparent;
+    color: var(--naval-dark-blue);
+}
+
+aside.sidebar nav ul ul li a.active {
+    background-color: var(--naval-dark-blue);
+    color: var(--white);
+    text-decoration: none;
+}
+
+main {
+    flex: 1; 
+    padding: 3rem;
+    overflow-y: auto; 
+}
+
+.prompt-interface {
+    display: grid;
+    row-gap: 0;
+    column-gap: 2rem;
+}
+
+.prompt-interface label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+    color: var(--naval-dark-blue);
+}
+
+.prompt-interface textarea,
+.prompt-interface .output-content {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--naval-medium-grey);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: var(--base-font-size);
+    background-color: var(--white);
+}
+
+.prompt-interface textarea {
+    resize: vertical; 
+}
+.prompt-interface textarea:focus {
+     outline: 2px solid var(--naval-dark-blue);
+     border-color: transparent;
+}
+
+.prompt-interface .output-content {
+    min-height: 100px; 
+    background-color: var(--naval-light-grey); 
+    white-space: pre-wrap; 
+    border: 1px solid var(--naval-medium-grey);
+}
+
+/* Styles pour la nouvelle section résultat */
+.result-display label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+    color: var(--naval-dark-blue);
+}
+
+.result-display .output-content {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--naval-medium-grey);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: var(--base-font-size);
+    background-color: var(--naval-light-grey); /* Fond gris clair pour le résultat */
+    min-height: 200px; /* Hauteur minimale pour voir le résultat */
+    white-space: pre-wrap; /* Conserver les retours à la ligne */
+}
+
+footer {
+    background-color: var(--naval-dark-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    margin-top: auto; 
+}
+
+footer p {
+    font-size: 1.4rem;
+    color: var(--naval-light-grey);
+}
+
+/* Style pour les liens potentiels dans le footer */
+footer a {
+    color: var(--white);
+    text-decoration: none;
+    transition: text-decoration 0.2s ease-in-out;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    body {
+       /* Garde la structure flex colonne pour header/footer pleine largeur */
+    }
+    .page-wrapper {
+        flex-direction: row; 
+    }
+    aside.sidebar {
+        width: var(--sidebar-width);
+        border-right: 1px solid var(--naval-light-grey); 
+        border-bottom: none;
+        max-height: none; 
+    }
+     main {
+        padding: 3rem;
+    }
+} 
+
+/* Style du bouton Principal - Alignement sur le rouge accent de Naval Group */
+.prompt-interface button {
+    /* Augmentation de la taille */
+    padding: 1.2rem 2.5rem; /* Plus de padding */
+    background-color: #E60028; /* Rouge Accent (valeur directe) */
+    color: #ffffff; /* Texte Blanc */
+    border: 1px solid #E60028; /* Bordure rouge (ou transparente) */
+    border-radius: 2px;
+    font-size: 1.8rem; /* Police légèrement plus grande */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    justify-self: start;
+    /* Marge supérieure réduite à 3px */
+    margin-top: 3px;
+}
+
+/* Hover pour le bouton */
+.prompt-interface button:hover {
+    background-color: #bf0022; /* Rouge légèrement plus foncé au survol */
+    color: #ffffff; /* Texte Blanc */
+    border-color: #bf0022; /* Bordure assortie */
+} 
