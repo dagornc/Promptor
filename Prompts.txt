@@ -1,0 +1,892 @@
+1. Rédige-moi un article
+
+[INSTRUCTION] Tu es un rédacteur expert spécialisé dans la création d'articles structurés et approfondis. Rédige-moi un article complet sur [SUJET].
+Voici ce que j'attends:
+* Une introduction captivante qui présente le sujet et son importance
+* Un corps d'article divisé en 3-5 sections clairement titrées
+* Des sous-titres pour faciliter la navigation
+* Des faits précis et des exemples concrets à chaque étape
+* Une conclusion qui synthétise les points clés et ouvre sur une réflexion
+* Un ton [FORMEL/CONVERSATIONNEL/ÉDUCATIF] adapté à un public [DÉBUTANT/INTERMÉDIAIRE/EXPERT]
+* Longueur approximative: [NOMBRE] mots
+Important: Évite le jargon inutile, utilise des phrases concises, et assure-toi que chaque paragraphe apporte une valeur ajoutée. [/INSTRUCTION]
+
+2. Élabore-moi un guide comparatif
+
+[INSTRUCTION] En tant qu'expert impartial, élabore un guide comparatif détaillé sur [SUJET/PRODUITS/SERVICES].
+Structure requise:
+1. Introduction succincte expliquant l'importance de cette comparaison
+2. Méthodologie d'évaluation avec critères spécifiques utilisés
+3. Tableau comparatif avec les caractéristiques essentielles:
+    * Fonctionnalités principales
+    * Prix/rapport qualité-prix
+    * Avantages distinctifs
+    * Inconvénients ou limitations
+    * Cas d'usage idéaux
+4. Analyse approfondie de chaque option (forces/faiblesses)
+5. Recommandations personnalisées selon différents profils d'utilisateurs
+6. Conclusion avec choix optimal pour différents scénarios
+Format: Utilise des listes à puces, des tableaux et des paragraphes courts pour maximiser la lisibilité. Ton: Objectif et factuel, sans biais commercial.
+Livre une comparaison équilibrée qui aide véritablement à la prise de décision. [/INSTRUCTION]
+
+3. Crée-moi un guide complet
+
+[INSTRUCTION] Agis comme un expert chevronné en [DOMAINE] et crée un guide exhaustif sur [SUJET/ACTIVITÉ].
+Voici la structure à suivre:
+Introduction
+* Contexte et importance du sujet
+* À qui s'adresse ce guide
+* Ce qu'il permet d'accomplir
+Fondamentaux (pour débutants)
+* Concepts essentiels expliqués simplement
+* Terminologie de base
+* Prérequis et matériel nécessaire
+Techniques intermédiaires
+* Méthodes étape par étape
+* Astuces pratiques
+* Erreurs courantes à éviter
+Niveau avancé
+* Stratégies d'optimisation
+* Techniques spécialisées
+* Résolution de problèmes complexes
+Ressources complémentaires
+* Outils recommandés
+* Références pour approfondir
+* Communautés ou forums pertinents
+Utilise un langage clair, des exemples concrets à chaque étape, et des instructions précises. Inclus des avertissements sur les pièges courants et propose des solutions alternatives quand nécessaire. [/INSTRUCTION]
+
+4. Conçois-moi un livret de voyage
+
+[INSTRUCTION] En tant que conseiller voyage expérimenté, conçois un livret de voyage pratique et inspirant pour [DESTINATION].
+Inclus spécifiquement:
+Infos pratiques essentielles
+* Meilleure période pour visiter, climat, et durée recommandée
+* Visa/formalités d'entrée et devises
+* Transports locaux et déplacements
+Itinéraire jour par jour (pour un séjour de [X] jours)
+* Jour 1: Arrivée et orientation ([quartier/zone])
+* Jour 2-X: Activités et visites par jour avec timing approximatif
+    * Attractions principales et expériences incontournables
+    * Alternatives pour différents intérêts/budgets
+    * Temps de trajet entre les sites
+Hébergements recommandés
+* Options par quartier et catégorie de prix
+* Avantages de chaque zone
+Gastronomie locale
+* Spécialités à goûter absolument
+* Restaurants recommandés (du traditionnel au contemporain)
+* Conseils pour les restrictions alimentaires
+Conseils culturels et astuces locales
+* Coutumes importantes à respecter
+* Phrases utiles dans la langue locale
+* Comment éviter les pièges à touristes
+Formate ce guide pour qu'il soit facile à consulter pendant le voyage, avec des informations prioritaires et des conseils d'initié qu'on ne trouve pas dans les guides classiques. [/INSTRUCTION]
+
+5. Organise-moi du contenu pertinent
+
+[INSTRUCTION] Agis comme un expert en curation de contenu. Sélectionne et organise le contenu le plus pertinent sur [THÈME], en le filtrant selon les critères suivants:
+Critères de sélection:
+* Pertinence directe avec le sujet central
+* Actualité de l'information (privilégier le contenu récent sauf contexte historique)
+* Fiabilité des sources et qualité factuelle
+* Diversité des perspectives représentées
+* Valeur pratique/actionnable des informations
+Structure de présentation:
+1. Synthèse globale du thème (max 150 mots)
+2. Contenu prioritaire (concepts fondamentaux à maîtriser absolument)
+3. Ressources secondaires (pour approfondir)
+4. Contenus spécialisés (pour publics spécifiques)
+5. Perspectives émergentes ou tendances futures
+Pour chaque élément sélectionné, fournis:
+* Un titre clair
+* Une description concise (2-3 phrases maximum)
+* La raison de son inclusion
+* Un niveau de priorité (Essentiel, Important, Complémentaire)
+Évite les répétitions, les contenus redondants ou obsolètes, et assure-toi que l'ensemble forme une progression cohérente pour quelqu'un qui découvre le sujet. [/INSTRUCTION]
+
+6. Développe-moi une structure de conférence
+
+[INSTRUCTION] En tant qu'expert en communication et structuration de conférences, développe une architecture complète pour une conférence de [DURÉE] sur [SUJET].
+Éléments à inclure:
+1. Titre accrocheur et sous-titre explicatif
+2. Objectifs d'apprentissage précis (3-5 maximum)
+3. Structure détaillée:
+    * Introduction captivante (hook + établissement de crédibilité + présentation du plan)
+    * Partie 1: [titre] - durée approximative
+    * Partie 2: [titre] - durée approximative
+    * Partie 3: [titre] - durée approximative
+    * Conclusion mémorable et appel à l'action
+4. Pour chaque section principale:
+    * Points clés à couvrir
+    * Histoire ou exemple concret à partager
+    * Élément visuel recommandé
+    * Question provocante ou moment d'interaction avec l'audience
+5. Transitions entre les sections
+6. Moments stratégiques pour:
+    * Pauses
+    * Exercices participatifs
+    * Questions-réponses
+Équilibre le contenu théorique et pratique, prévois des variations de rythme, et intègre des moments mémorables qui renforceront les messages principaux. [/INSTRUCTION]
+
+Analyse et Traitement de Données
+Les prompts d'analyse et de traitement de données sont conçus pour transformer des informations brutes en insights actionnables. Cette catégorie propose des structures méthodiques pour analyser des tableaux Excel, catégoriser des listes, résumer des documents complexes, ou expliquer des concepts techniques. Ces prompts se distinguent par leur approche systématique qui guide le modèle à travers un processus d'analyse rigoureux, garantissant ainsi des résultats complets et pertinents. Ils intègrent des techniques de hiérarchisation de l'information, d'identification des tendances, et de traduction de données complexes en recommandations concrètes. Ces prompts sont particulièrement précieux pour les analystes, managers, chercheurs et toute personne confrontée à la nécessité d'extraire du sens à partir de données volumineuses ou complexes, offrant une méthodologie structurée pour transformer l'information en connaissance actionnable.
+
+
+[INSTRUCTION] Agis comme un analyste de données expert. Examine ce tableau Excel et fournis une analyse complète en exactement 10 points clés.
+Étapes d'analyse à suivre:
+1. Vue d'ensemble des données
+    * Nature et portée du jeu de données
+    * Période couverte et granularité
+    * Complétude et qualité globale
+2. Identification des mesures centrales
+    * Moyennes, médianes et modes pertinents
+    * Comparaison des valeurs centrales avec les extrêmes
+3. Détection des tendances
+    * Évolutions temporelles significatives
+    * Patterns cycliques ou saisonniers éventuels
+4. Repérage des anomalies
+    * Valeurs aberrantes et leur signification
+    * Irrégularités nécessitant investigation
+5. Analyse des corrélations
+    * Relations entre variables clés
+    * Distinction entre corrélation et causalité
+6. Segmentation pertinente
+    * Regroupements naturels dans les données
+    * Différences entre segments identifiés
+7. Comparaisons contextuelles
+    * Benchmark par rapport à des références du secteur
+    * Évolution par rapport aux périodes précédentes
+8. Insights principaux
+    * Conclusions majeures tirées des données
+    * Implications pour les décisions à prendre
+9. Visualisations recommandées
+    * Types de graphiques les plus adaptés
+    * Données à mettre en évidence visuellement
+10. Recommandations actionnables
+    * Actions concrètes suggérées par l'analyse
+    * Domaines nécessitant une investigation plus approfondie
+Pour chaque point, sois précis, factuel et centré sur les données, tout en expliquant les implications pratiques des observations. [/INSTRUCTION]
+
+8. Aide-moi à catégoriser cette liste
+
+[INSTRUCTION] Agis comme un expert en taxonomie et classification. Aide-moi à catégoriser efficacement cette liste d'éléments:
+[LISTE D'ÉLÉMENTS]
+Approche à suivre:
+1. Analyse initiale:
+    * Identifie la nature des éléments (objets, concepts, termes techniques, etc.)
+    * Détermine les dimensions pertinentes de classification
+2. Proposition de taxonomies possibles:
+    * Suggère 2-3 systèmes de catégorisation différents adaptés à cette liste
+    * Explique les avantages/inconvénients de chaque approche
+3. Système de classification recommandé:
+    * Présente les catégories principales et sous-catégories
+    * Explique la logique et les critères de chaque groupe
+    * Répartis tous les éléments dans ces catégories
+4. Traitement des cas ambigus:
+    * Identifie les éléments difficiles à classer
+    * Propose des solutions (double catégorisation, création de catégories hybrides, etc.)
+    * Explique ton raisonnement pour chaque cas particulier
+5. Structure finale recommandée:
+    * Présente la classification complète de manière visuelle et hiérarchique
+    * Suggère un système de tags ou métadonnées complémentaires si pertinent
+Privilégie la clarté, la cohérence logique et l'utilité pratique dans ta classification. [/INSTRUCTION]
+
+9. Résume-moi ce document
+
+[INSTRUCTION] Agis comme un expert en synthèse documentaire. Résume ce document en capturant son essence complète tout en restant concis:
+[DOCUMENT]
+Structure de synthèse à suivre:
+Méta-informations
+* Type de document, auteur(s), date si disponible
+* Public cible et contexte
+* Objectif principal du document
+Synthèse exécutive (5-7 phrases)
+* Message central et conclusion principale
+* Portée et limites du contenu
+Points essentiels hiérarchisés
+1. Idée maîtresse #1
+    * Argument/exemple clé
+    * Nuance importante
+2. Idée maîtresse #2
+    * Argument/exemple clé
+    * Nuance importante
+3. Idée maîtresse #3
+    * Argument/exemple clé
+    * Nuance importante
+Éléments notables
+* Données quantitatives significatives
+* Citations marquantes (limitées aux plus pertinentes)
+* Visuels ou tableaux importants mentionnés
+Analyse critique (optionnelle)
+* Forces du document
+* Limites ou questions non abordées
+Consignes: Préserve la neutralité du texte original, évite d'introduire des biais ou opinions personnelles, et assure-toi que les points principaux sont proportionnellement représentés selon leur importance dans le document original. [/INSTRUCTION]
+
+10. Explique-moi ce concept complexe
+
+[INSTRUCTION] Utilise la technique Feynman pour m'expliquer [CONCEPT COMPLEXE] de manière simple et claire.
+Suis rigoureusement ces étapes:
+1. Définition fondamentale
+* Exprime l'essence du concept en une phrase simple
+* Relie-le à des phénomènes familiers ou quotidiens
+* Évite absolument tout jargon technique à ce stade
+2. Analogie principale
+* Crée une analogie concrète et visuelle
+* Explique en quoi cette analogie capture l'essence du concept
+* Précise les limites de cette analogie
+3. Explication progressive
+* Niveau 1: Explication qu'un enfant de 10 ans comprendrait
+* Niveau 2: Ajout de quelques nuances importantes
+* Niveau 3: Introduction de quelques termes techniques essentiels (toujours définis)
+4. Vérification de compréhension
+* Pose 2-3 questions qu'une personne ayant compris le concept pourrait répondre
+* Fournis les réponses à ces questions en utilisant l'explication simplifiée
+5. Application pratique
+* Montre comment ce concept s'applique à des situations réelles
+* Explique pourquoi comprendre ce concept est utile ou important
+Ne saute aucune de ces étapes et assure-toi que chaque niveau de ton explication est parfaitement compréhensible avant de passer au suivant. [/INSTRUCTION]
+
+Gestion de Projet et Organisation
+Les prompts de gestion de projet et d'organisation sont conçus pour structurer efficacement le travail, optimiser les ressources et maximiser la productivité. Cette catégorie couvre des aspects essentiels comme la planification de projets avec diagrammes de Gantt, la définition des rôles de chef de projet, l'implémentation de méthodologies agiles comme Scrum, la priorisation des tâches selon la matrice d'Eisenhower, et la formulation d'objectifs SMART. Ces prompts se distinguent par leur approche méthodique et leur focalisation sur l'action concrète. Ils guident le modèle pour produire des réponses directement applicables, combinant théorie et pratique dans un équilibre optimal. Particulièrement utiles pour les chefs de projet, managers, consultants et toute personne cherchant à améliorer l'efficacité opérationnelle, ces prompts transforment des principes de gestion abstraits en plans d'action concrets, adaptés au contexte spécifique de l'utilisateur et immédiatement exploitables.
+11. Élabore-moi un diagramme de Gantt
+
+[INSTRUCTION] Agis comme un chef de projet expérimenté et élabore un diagramme de Gantt détaillé pour le projet suivant:
+[DESCRIPTION DU PROJET]
+Structure requise:
+1. Vue d'ensemble du projet
+* Titre et objectif principal
+* Date de début et échéance finale
+* Livrables majeurs attendus
+2. Phases principales (format tableau)
+Phase	Date début	Date fin	Durée	Dépendances	Responsable
+Phase 1: [Nom]	JJ/MM/AA	JJ/MM/AA	XX jours	-	[Rôle]
+Phase 2: [Nom]	JJ/MM/AA	JJ/MM/AA	XX jours	Phase 1	[Rôle]
+etc.	...	...	...	...	...
+3. Tâches détaillées par phase (format tableau)
+ID	Tâche	Date début	Date fin	Durée	Dépendances	Responsable	Statut
+1.1	[Tâche]	JJ/MM/AA	JJ/MM/AA	XX jours	-	[Rôle]	À faire
+1.2	[Tâche]	JJ/MM/AA	JJ/MM/AA	XX jours	1.1	[Rôle]	À faire
+etc.	...	...	...	...	...	...	...
+4. Jalons critiques (format tableau)
+Jalon	Date	Livrable	Critères de réussite
+[Nom]	JJ/MM/AA	[Description]	[Critères]
+etc.	...	...	...
+5. Chemin critique et risques
+* Identification des tâches sur le chemin critique
+* Points d'attention particuliers
+* Marges tampons recommandées
+Assure-toi que toutes les dépendances sont logiques, que les durées sont réalistes, et que les ressources sont correctement allouées. Indique clairement les prérequis pour chaque phase/tâche et les conséquences d'un retard potentiel. [/INSTRUCTION]
+
+12. Guide-moi dans mon rôle de chef de projet
+
+[INSTRUCTION] En tant que mentor expert en gestion de projet, guide-moi dans mon rôle de chef de projet pour [PROJET SPÉCIFIQUE]. Fournis un cadre complet couvrant tous les aspects essentiels de ma fonction.
+1. Responsabilités fondamentales
+* Liste des 5-7 responsabilités primordiales
+* Éléments non-négociables de la fonction
+* Équilibre entre gestion technique et leadership humain
+2. Compétences critiques à mobiliser
+* Compétences techniques spécifiques à ce type de projet
+* Compétences interpersonnelles essentielles
+* Compétences organisationnelles déterminantes
+* Comment les développer ou les renforcer
+3. Méthodologie recommandée
+* Approche adaptée à la nature du projet (Agile, Waterfall, Hybride)
+* Outils et processus spécifiques
+* Rituels de gestion efficaces (réunions, reporting, etc.)
+4. Gestion des parties prenantes
+* Cartographie des parties prenantes clés
+* Stratégies de communication adaptées à chaque groupe
+* Gestion des attentes et des conflits potentiels
+5. Anticipation des défis typiques
+* Obstacles prévisibles pour ce type de projet
+* Signes avant-coureurs à surveiller
+* Stratégies de mitigation proactives
+6. Facteurs clés de succès
+* Indicateurs de performance à suivre
+* Conditions critiques à établir dès le départ
+* Pièges classiques à éviter absolument
+Fournis des conseils pratiques, applicables immédiatement, en évitant les généralités. Adapte tes recommandations à la spécificité du projet mentionné, son contexte et ses enjeux particuliers. [/INSTRUCTION]
+
+13. Organise-moi cette équipe selon Scrum
+
+[INSTRUCTION] En tant que Coach Agile certifié, organise cette équipe selon la méthode Scrum de façon rigoureuse et pragmatique.
+Contexte équipe: [DESCRIPTION DE L'ÉQUIPE ET DU PROJET]
+1. Structure des rôles
+* Définition précise des 3 rôles Scrum fondamentaux
+    * Product Owner: responsabilités, profil idéal, interactions clés
+    * Scrum Master: responsabilités, profil idéal, posture à adopter
+    * Équipe de développement: composition optimale, organisation interne
+2. Artefacts à mettre en place
+* Product Backlog
+    * Structure recommandée
+    * Techniques de priorisation (MOSCOW, WSJF, etc.)
+    * Critères de qualité des items
+* Sprint Backlog
+    * Format et contenu
+    * Processus de construction
+* Incrément
+    * Définition de "Terminé" (DoD) adaptée au projet
+    * Processus de validation
+3. Événements Scrum à instaurer
+* Sprint Planning
+    * Durée et participants
+    * Structure en deux parties
+    * Livrables attendus
+* Daily Scrum
+    * Format recommandé
+    * Pièges à éviter
+* Sprint Review
+    * Organisation pratique
+    * Participants à impliquer
+    * Résultats attendus
+* Sprint Retrospective
+    * Techniques efficaces
+    * Suivi des actions d'amélioration
+4. Métriques et indicateurs
+* Vélocité d'équipe
+* Burndown charts
+* Indicateurs de santé d'équipe
+5. Plan de transition
+* Étapes progressives d'implémentation
+* Formation nécessaire
+* Gestion du changement
+Propose une implémentation qui respecte les valeurs et principes Scrum tout en s'adaptant aux spécificités du contexte mentionné, sans tomber dans le "Scrum-mais". [/INSTRUCTION]
+
+14. Aide-moi à prioriser ces tâches
+
+[INSTRUCTION] En tant qu'expert en productivité et gestion du temps, aide-moi à prioriser efficacement cette liste de tâches en utilisant la matrice d'Eisenhower:
+[LISTE DE TÂCHES]
+Processus d'analyse à suivre:
+1. Évaluation individuelle de chaque tâche
+Pour chaque tâche, évalue et justifie:
+* Niveau d'urgence (1-5): impact du délai, conséquences d'un retard
+* Niveau d'importance (1-5): valeur ajoutée, alignement stratégique, impact à long terme
+2. Classification dans la matrice
+Répartis toutes les tâches dans les 4 quadrants:
+* Q1: Urgent et Important → FAIRE IMMÉDIATEMENT
+* Q2: Important mais Non-Urgent → PLANIFIER
+* Q3: Urgent mais Non-Important → DÉLÉGUER
+* Q4: Ni Urgent, Ni Important → ÉLIMINER
+3. Plan d'action détaillé
+* Tâches Q1: ordre précis d'exécution avec timing estimé
+* Tâches Q2: calendrier de planification avec blocs de temps dédiés
+* Tâches Q3: personnes/services à qui déléguer + méthode de suivi
+* Tâches Q4: justification de l'élimination/report
+4. Stratégies d'optimisation
+* Regroupement de tâches similaires pour efficacité
+* Identification des tâches bloquantes à prioriser
+* Équilibrage charge mentale/énergie requise
+5. Système de suivi
+* Méthode pour revérifier les priorités quotidiennement
+* Adaptation en cas d'imprévus ou nouvelles urgences
+Fournis un plan d'action concret, directement applicable, qui tienne compte non seulement de la théorie d'Eisenhower mais aussi du contexte pratique, des contraintes de ressources et de la charge globale de travail. [/INSTRUCTION]
+
+15. Formule-moi des objectifs SMART
+
+[INSTRUCTION] En tant que coach en performance et développement, aide-moi à formuler des objectifs SMART parfaitement structurés pour [DOMAINE/PROJET].
+Pour chaque objectif, applique rigoureusement le cadre SMART:
+1. Spécifique
+* Formulation précise de ce qui doit être accompli
+* Réponse claire aux questions: Quoi? Qui? Où? Comment?
+* Verbes d'action concrets et mesurables
+2. Mesurable
+* Indicateurs de succès quantifiables
+* Métriques précises avec unités de mesure
+* Seuils/valeurs cibles explicites
+* Méthode de mesure définie
+3. Atteignable
+* Évaluation réaliste des ressources nécessaires
+* Compétences et moyens requis vs. disponibles
+* Niveau de défi approprié (ambitieux mais possible)
+4. Réaliste
+* Alignement avec la stratégie/vision globale
+* Pertinence par rapport aux priorités
+* Contrôle direct sur les leviers d'action
+5. Temporellement défini
+* Date d'échéance précise
+* Jalons intermédiaires
+* Calendrier de suivi
+Format pour chaque objectif:
+1. Énoncé concis (une phrase)
+2. Détail des composantes SMART
+3. Indicateurs de progression (20%, 50%, 80%, 100%)
+4. Ressources nécessaires
+5. Obstacles potentiels et stratégies de mitigation
+Propose 3-5 objectifs SMART parfaitement formulés et complémentaires pour atteindre l'ambition globale dans le domaine spécifié. [/INSTRUCTION]
+
+
+16. Développe-moi une stratégie entrepreneuriale navale
+
+
+[INSTRUCTION] En tant que consultant expert en stratégie maritime et entrepreneuriat, développe une stratégie entrepreneuriale complète et innovante pour le secteur naval, spécifiquement centrée sur [SEGMENT/TECHNOLOGIE/SERVICE].
+Structure à suivre:
+1. Analyse contextuelle
+* État actuel du marché maritime ciblé
+    * Taille, croissance et segments clés
+    * Acteurs dominants et parts de marché
+    * Tendances disruptives et opportunités émergentes
+* Facteurs macroéconomiques et géopolitiques déterminants
+* Cadre réglementaire et évolutions anticipées
+    * Réglementations IMO, normes environnementales
+    * Spécificités régionales importantes
+2. Proposition de valeur distinctive
+* Positionnement stratégique unique
+* Avantages compétitifs durables
+* Éléments différenciateurs par rapport aux solutions existantes
+* Bénéficiaires principaux et besoins adressés
+3. Modèle d'affaires innovant
+* Structure de revenus et modèle de prix
+* Partenariats stratégiques nécessaires
+* Ressources clés et compétences critiques
+* Structure organisationnelle optimale
+4. Plan de déploiement
+* Étapes de développement (MVP à solution mature)
+* Stratégie d'accès au marché
+* Objectifs chiffrés par horizon temporel (1-3-5 ans)
+* Besoins de financement et stratégie d'investissement
+5. Analyse de risques et contingences
+* Risques techniques, commerciaux et réglementaires
+* Stratégies de mitigation
+* Plans alternatifs pour scénarios adverses
+Fournis une stratégie réaliste mais ambitieuse, ancrée dans les spécificités du secteur maritime et naval, avec une attention particulière aux exigences environnementales, à la digitalisation et aux nouvelles attentes des acteurs de la chaîne de valeur maritime. [/INSTRUCTION]
+
+Programmation et Automatisation
+Les prompts de programmation et d'automatisation sont conçus pour générer du code fonctionnel et des solutions techniques optimisées. Cette catégorie aborde la création de pages HTML, de scripts VBA pour Excel et de scripts PowerShell pour l'automatisation système. Ces prompts excellent par leur structure technique précise qui guide le modèle à produire du code propre, bien documenté et respectant les meilleures pratiques de développement. Ils intègrent des considérations importantes comme la gestion des erreurs, l'accessibilité, la performance et la maintenabilité. Spécialement conçus pour les développeurs, administrateurs système et professionnels techniques, ces prompts permettent d'obtenir rapidement des solutions codées prêtes à l'emploi, accompagnées d'explications claires sur leur fonctionnement et leur implémentation. Que vous ayez besoin de créer une interface utilisateur, d'automatiser des tâches Excel ou d'optimiser des processus système, ces prompts vous fournissent un cadre efficace pour générer des solutions techniques de qualité professionnelle.
+17. Génère-moi une page HTML
+
+[INSTRUCTION] Agis comme un développeur front-end expert. Génère-moi une page HTML complète et fonctionnelle pour [OBJECTIF/FONCTION] qui répond aux exigences suivantes:
+Spécifications techniques:
+* HTML5 sémantique et valide
+* CSS responsive (mobile-first)
+* Accessibilité WCAG AA minimum
+* Performance optimisée
+* Compatible avec les navigateurs modernes
+Structure requise:
+* Header avec navigation intuitive
+* Section principale clairement organisée
+* Pied de page avec informations légales
+* Architecture adaptée au contenu spécifique
+Éléments d'interface:
+* [FONCTIONNALITÉS SPÉCIFIQUES]
+* [COMPOSANTS INTERACTIFS]
+* [EXIGENCES VISUELLES]
+Livrables attendus:
+1. Code HTML complet et commenté
+2. CSS intégré (dans une balise style)
+3. JavaScript essentiel (si nécessaire)
+4. Explications des choix d'implémentation
+5. Suggestions d'améliorations futures
+Le code doit être propre, bien indenté, et suivre les meilleures pratiques actuelles. Utilise des noms de classes significatifs et une organisation du code qui facilite la maintenance.
+Ne génère pas de placeholder ou de lorem ipsum, mais du contenu réaliste et cohérent avec l'objectif de la page. [/INSTRUCTION]
+
+18. Écris-moi un script VBA
+
+[INSTRUCTION] Agis comme un expert en automatisation Excel VBA. Écris-moi un script VBA complet et optimisé pour [TÂCHE/FONCTION] qui répond aux exigences suivantes:
+Spécifications fonctionnelles:
+* Objectif précis: [DESCRIPTION DÉTAILLÉE]
+* Données d'entrée: [FORMATS/PLAGES/SOURCES]
+* Traitement attendu: [OPÉRATIONS/TRANSFORMATIONS]
+* Résultats souhaités: [FORMATS/DESTINATIONS]
+Exigences techniques:
+* Compatible Excel [VERSION]
+* Optimisé pour les performances (minimiser le temps d'exécution)
+* Robuste face aux erreurs courantes
+* Maintenance facile par des développeurs tiers
+Structure du code:
+1. En-tête avec métadonnées (auteur, version, date, description)
+2. Déclaration des variables avec types explicites
+3. Constantes pour les valeurs réutilisées
+4. Procédure principale modulaire
+5. Sous-procédures et fonctions spécialisées
+6. Gestion des erreurs à chaque niveau
+Interface utilisateur:
+* Messages utilisateur clairs à chaque étape
+* Validation des entrées utilisateur
+* Indicateurs visuels de progression
+* Options de configuration (si pertinent)
+Chaque section de code doit être commentée pour expliquer sa fonction, ses paramètres et ses valeurs de retour. Inclus également des commentaires pour les parties complexes ou non-évidentes.
+Fournis le code complet, prêt à être copié-collé, ainsi que des instructions précises sur comment l'intégrer et l'utiliser dans un classeur Excel. [/INSTRUCTION]
+
+19. Crée-moi un script PowerShell
+
+[INSTRUCTION] Agis comme un ingénieur DevOps expérimenté. Crée-moi un script PowerShell robuste et efficace pour [AUTOMATISER/RÉSOUDRE PROBLÈME] qui respecte les meilleures pratiques professionnelles.
+Spécifications fonctionnelles:
+* Objectif principal: [DESCRIPTION DÉTAILLÉE]
+* Environnement cible: [OS/VERSION/CONTEXTE]
+* Comportement attendu: [PROCESSUS/RÉSULTATS]
+* Conditions particulières: [CONTRAINTES/EXIGENCES]
+Structure requise:
+1. En-tête de documentation (synopsis, description, paramètres, exemples)
+2. Déclaration des paramètres avec validation
+3. Vérification préalable des prérequis et permissions
+4. Fonctions modulaires pour chaque opération logique
+5. Journalisation détaillée des actions et erreurs
+6. Nettoyage et finalisation propre
+Exigences techniques:
+* Compatible PowerShell version [X] et supérieure
+* Respect du style PowerShell (verbe-nom pour les fonctions)
+* Gestion complète des erreurs (try/catch, ErrorAction)
+* Paramètres validés et documentés
+* Options pour exécution silencieuse/verbeuse
+* Sécurité (pas de hardcoding de credentials, etc.)
+Format de sortie:
+* Objets PowerShell structurés (pas juste du texte)
+* Codes de retour explicites
+* Messages utilisateur informatifs
+* Logs détaillés pour le dépannage
+Inclus des commentaires pour les sections complexes et des exemples d'utilisation variés. Assure-toi que le script soit idempotent (peut être exécuté plusieurs fois sans effet secondaire) quand c'est possible. [/INSTRUCTION]
+
+Formation et Apprentissage
+Les prompts de formation et d'apprentissage sont conçus pour créer des contenus pédagogiques structurés et efficaces. Cette catégorie propose des frameworks pour développer des modules de formation complets et des quiz d'évaluation adaptés à différents niveaux de connaissance. Ces prompts se distinguent par leur approche pédagogique solide, intégrant les principes de l'andragogie et les taxonomies d'apprentissage reconnues comme celle de Bloom. Ils guident le modèle pour produire des contenus équilibrés entre théorie et pratique, avec une progression logique et des méthodes d'évaluation adaptées. Particulièrement utiles pour les formateurs, enseignants, responsables L&D et créateurs de contenu éducatif, ces prompts facilitent la conception de parcours d'apprentissage structurés et efficaces, adaptés au public cible et aux objectifs pédagogiques spécifiques. Ils permettent de transformer des connaissances complexes en expériences d'apprentissage accessibles et engageantes.
+20. Conçois-moi un module de formation
+
+[INSTRUCTION] Agis comme un concepteur pédagogique expert. Conçois un module de formation complet et engageant sur [SUJET], en suivant les principes de l'ingénierie pédagogique moderne.
+1. Cadrage pédagogique
+* Public cible: [DESCRIPTION DU PUBLIC]
+* Prérequis: connaissances et compétences nécessaires
+* Durée totale: [HEURES/JOURS] (décomposées par section)
+* Objectifs pédagogiques formulés selon la taxonomie de Bloom:
+    * Connaissance: "À la fin de cette formation, l'apprenant sera capable de..."
+    * Compréhension: "..."
+    * Application: "..."
+    * Analyse: "..."
+    * Évaluation/Création: "..."
+2. Structure pédagogique détaillée
+* Module 1: [TITRE] (durée)
+    * Objectifs spécifiques
+    * Concepts clés
+    * Activités d'apprentissage
+    * Méthode d'évaluation
+* Module 2: [TITRE] (durée)
+    * ...
+* Module 3: [TITRE] (durée)
+    * ...
+3. Méthodologies d'enseignement
+* Approches pédagogiques variées (théorique, participative, expérientielle)
+* Équilibre entre présentation, discussion, pratique et réflexion
+* Stratégies d'engagement adaptées au sujet et au public
+4. Ressources et supports pédagogiques
+* Matériel théorique (présentations, documents de référence)
+* Exercices pratiques détaillés avec corrigés
+* Ressources complémentaires (lectures, vidéos, outils)
+* Documentation remise aux apprenants
+5. Évaluation des acquis
+* Méthodes d'évaluation formative (pendant l'apprentissage)
+* Méthodes d'évaluation sommative (validation finale)
+* Critères de réussite explicites
+6. Plan de suivi post-formation
+* Activités de renforcement
+* Ressources pour l'approfondissement
+* Mécanismes de support continu
+La formation doit être conçue selon les principes d'apprentissage des adultes (andragogie), avec un équilibre entre théorie et pratique, et une progression logique qui maintient l'engagement tout en assurant l'acquisition effective des compétences visées. [/INSTRUCTION]
+
+21. Élabore-moi un quiz
+
+[INSTRUCTION] En tant que concepteur pédagogique spécialisé en évaluation, élabore-moi un quiz complet et efficace sur [SUJET] qui teste véritablement la compréhension et pas seulement la mémorisation.
+Paramètres du quiz:
+* Niveau de difficulté: [DÉBUTANT/INTERMÉDIAIRE/AVANCÉ]
+* Public cible: [DESCRIPTION]
+* Durée recommandée: [MINUTES]
+* Objectifs d'évaluation: [CONNAISSANCES/COMPÉTENCES À ÉVALUER]
+Structure du quiz:
+* Section 1: Questions de base (30%)
+    * questions à choix multiples
+    * Objectif: vérifier les connaissances fondamentales
+* Section 2: Questions intermédiaires (40%)
+    * questions variées (QCM, vrai/faux, appariement)
+    * Objectif: tester la compréhension des concepts
+* Section 3: Questions avancées (30%)
+    * questions de réflexion/application
+    * Objectif: évaluer la capacité d'analyse et d'application
+Format des questions:
+Pour chaque question, inclure:
+1. L'énoncé clair et précis
+2. Les options de réponse (pour QCM)
+3. La réponse correcte clairement identifiée
+4. Une explication détaillée de la réponse (pourquoi c'est correct et pourquoi les autres options sont incorrectes)
+5. Niveau taxonomique de Bloom ciblé par la question
+Caractéristiques importantes:
+* Formulation sans ambiguïté
+* Distracteurs plausibles (pas de réponses évidemment fausses)
+* Couverture équilibrée de tous les concepts importants
+* Progression logique du simple au complexe
+* Questions qui testent différents niveaux cognitifs
+Inclus un barème de notation avec une échelle d'interprétation des résultats et des recommandations personnalisées selon le score obtenu. [/INSTRUCTION]
+
+Stratégie et Analyse
+Les prompts de stratégie et d'analyse sont conçus pour produire des analyses approfondies et des recommandations stratégiques pertinentes. Cette catégorie couvre des outils essentiels comme l'analyse SWOT, le développement de stratégies d'entreprise et l'application du modèle des 5 forces de Porter. Ces prompts se distinguent par leur approche méthodique et rigoureuse, guidant le modèle à travers un processus d'analyse structuré qui garantit l'exhaustivité et la pertinence des résultats. Ils intègrent une dimension critique et évaluative, assurant un équilibre entre analyse factuelle et recommandations actionnables. Particulièrement utiles pour les consultants, stratèges, dirigeants et analystes d'entreprise, ces prompts facilitent la prise de décision stratégique en transformant des données complexes en insights clairs et en orientations concrètes. Ils permettent d'obtenir rapidement des analyses de qualité professionnelle adaptées au contexte spécifique de chaque organisation ou marché.
+22. Réalise-moi une analyse SWOT
+
+[INSTRUCTION] Agis comme un consultant stratégique senior. Réalise une analyse SWOT exhaustive, équilibrée et stratégiquement pertinente pour [ENTREPRISE/PROJET/IDÉE].
+Approche méthodologique:
+1. Analyse préliminaire du contexte
+    * Secteur d'activité et positionnement actuel
+    * Tendances de marché significatives
+    * Contexte concurrentiel essentiel
+2. Analyse SWOT structurée
+FORCES (internes/actuelles)
+* F1: [Force majeure]
+    * Preuves/exemples concrets
+    * Degré de différenciation
+    * Impact stratégique
+* F2, F3, F4... (5-7 forces principales)
+FAIBLESSES (internes/actuelles)
+* Fa1: [Faiblesse majeure]
+    * Preuves/exemples concrets
+    * Sévérité et impact
+    * Potentiel d'amélioration
+* Fa2, Fa3, Fa4... (5-7 faiblesses principales)
+OPPORTUNITÉS (externes/futures)
+* O1: [Opportunité majeure]
+    * Tendances/données supportant cette opportunité
+    * Fenêtre temporelle d'exploitation
+    * Potentiel de valeur
+* O2, O3, O4... (5-7 opportunités principales)
+MENACES (externes/futures)
+* M1: [Menace majeure]
+    * Indicateurs/preuves de cette menace
+    * Horizon temporel et probabilité
+    * Impact potentiel
+* M2, M3, M4... (5-7 menaces principales)
+1. Analyse croisée et implications stratégiques
+    * Comment utiliser les forces pour saisir les opportunités
+    * Comment atténuer les faiblesses exposées aux menaces
+    * Actions prioritaires recommandées
+Assure-toi que chaque élément identifié soit:
+* Spécifique et concret (pas de généralités)
+* Étayé par des faits/données quand possible
+* Réellement pertinent pour la prise de décision stratégique
+* Correctement catégorisé (pas de confusion entre catégories)
+Priorise les éléments par importance stratégique au lieu de tenter l'exhaustivité. [/INSTRUCTION]
+
+23. Formule-moi une stratégie d'entreprise
+
+[INSTRUCTION] Agis comme un consultant en stratégie de premier plan. Formule une stratégie d'entreprise complète, cohérente et actionnelle pour [ORGANISATION] dans le secteur [SECTEUR].
+1. Analyse situationnelle
+* Positionnement actuel et trajectoire de l'organisation
+* Analyse concurrentielle (acteurs clés, parts de marché, avantages compétitifs)
+* Tendances sectorielles majeures (technologiques, réglementaires, sociales)
+* Capacités distinctives et ressources stratégiques disponibles
+2. Vision stratégique
+* Énoncé de vision à 5-10 ans
+* Ambition de positionnement marché
+* Proposition de valeur distinctive
+* Identité stratégique aspirationnelle
+3. Objectifs stratégiques
+* 3-5 objectifs stratégiques principaux, SMART et hiérarchisés
+* Métriques de succès associées à chaque objectif
+* Horizons temporels (court/moyen/long terme)
+* Arbitrages et focus stratégiques recommandés
+4. Axes stratégiques
+Pour chaque axe stratégique majeur, détailler:
+* Justification et logique stratégique
+* Actions prioritaires et initiatives clés
+* Ressources nécessaires (humaines, financières, technologiques)
+* Indicateurs de performance spécifiques
+* Interdépendances avec les autres axes
+5. Plan de mise en œuvre
+* Séquençage et priorités temporelles
+* Gouvernance et responsabilités
+* Système de suivi et d'adaptation
+* Gestion du changement et communication
+6. Analyse de risques et contingences
+* Risques stratégiques principaux
+* Scénarios alternatifs
+* Plans de contingence
+Assure-toi que la stratégie proposée soit:
+* Alignée avec les réalités du secteur et les capacités de l'organisation
+* Différenciante et source d'avantage compétitif durable
+* Suffisamment flexible pour s'adapter aux évolutions du marché
+* Réellement actionnelle avec des étapes concrètes
+* Équilibrée entre ambition et réalisme
+Évite les généralités stratégiques et les formulations vagues. Privilégie les choix stratégiques clairs, même difficiles, plutôt qu'une approche consensuelle sans priorisation. [/INSTRUCTION]
+
+24. Applique-moi le modèle des 5 forces de Porter
+
+[INSTRUCTION] En tant qu'expert en stratégie d'entreprise, applique rigoureusement le modèle des 5 forces de Porter pour analyser en profondeur l'industrie/marché [INDUSTRIE/MARCHÉ].
+Méthodologie d'analyse:
+Pour chaque force, fournis:
+1. Une évaluation quantifiée (Très faible / Faible / Modérée / Forte / Très forte)
+2. Une justification détaillée basée sur des données et faits spécifiques
+3. Les implications stratégiques qui en découlent
+4. Les tendances d'évolution prévisibles
+1. Pouvoir de négociation des clients
+* Structure et concentration des acheteurs
+* Volumes d'achat typiques et importance relative
+* Coûts de changement pour les clients
+* Menace d'intégration verticale amont
+* Sensibilité au prix et différenciation des produits/services
+* ÉVALUATION GLOBALE: [NIVEAU] + Justification
+2. Pouvoir de négociation des fournisseurs
+* Concentration des fournisseurs vs. acteurs du secteur
+* Existence de produits/services de substitution
+* Importance du secteur pour les fournisseurs
+* Coûts de changement de fournisseurs
+* Menace d'intégration verticale aval
+* ÉVALUATION GLOBALE: [NIVEAU] + Justification
+3. Menace des nouveaux entrants
+* Barrières à l'entrée (capital, technologie, réglementation)
+* Économies d'échelle et effets de réseau
+* Accès aux canaux de distribution
+* Avantages des acteurs établis (marque, brevets, courbe d'expérience)
+* Historique des entrées récentes et leur impact
+* ÉVALUATION GLOBALE: [NIVEAU] + Justification
+4. Menace des produits/services de substitution
+* Substituts disponibles et leur proposition de valeur
+* Rapport performance/prix des substituts
+* Coûts de changement pour les clients
+* Propension des acheteurs à substituer
+* Évolutions technologiques créant de nouveaux substituts
+* ÉVALUATION GLOBALE: [NIVEAU] + Justification
+5. Intensité concurrentielle
+* Nombre et équilibre des concurrents
+* Croissance du secteur
+* Coûts fixes et barrières à la sortie
+* Différenciation des produits/offres
+* Diversité des concurrents et de leurs stratégies
+* Enjeux stratégiques pour les acteurs
+* ÉVALUATION GLOBALE: [NIVEAU] + Justification
+Analyse globale et implications
+* Attractivité générale du secteur
+* Forces dominantes et leur impact sur la rentabilité
+* Facteurs d'évolution prévus à court/moyen terme
+* Positionnements stratégiques optimaux identifiés
+* Recommandations pour les acteurs selon leur profil
+Assure-toi que l'analyse soit spécifique à l'industrie mentionnée, évite les généralités, et base tes évaluations sur des faits et tendances vérifiables. [/INSTRUCTION]
+
+Bien-être et Développement Personnel
+Les prompts de bien-être et développement personnel sont conçus pour accompagner les individus dans leur épanouissement et leur croissance personnelle. Cette catégorie propose des structures pour guider des séances de méditation, générer des idées créatives lors de brainstorming, et élaborer des plans de retraite personnalisés. Ces prompts se distinguent par leur approche holistique et personnalisée, combinant expertise technique et sensibilité aux besoins individuels. Ils guident le modèle pour produire des réponses qui équilibrent théorie et application pratique, avec une attention particulière à l'adaptabilité selon le niveau et les objectifs spécifiques de l'utilisateur. Particulièrement utiles pour les coaches, conseillers, formateurs en développement personnel et individus en quête de croissance personnelle, ces prompts facilitent la création de parcours de développement sur mesure et d'expériences transformatives adaptées aux besoins spécifiques de chacun.
+25. Guide-moi dans une séance de méditation
+
+[INSTRUCTION] Agis comme un instructeur de méditation expérimenté. Guide-moi dans une séance de méditation de pleine conscience adaptée à mon niveau [DÉBUTANT/INTERMÉDIAIRE/AVANCÉ] et centrée sur [OBJECTIF: calme/concentration/compassion/gestion du stress/etc].
+Structure de la séance:
+1. Préparation (2-3 minutes)
+* Instructions précises sur la posture physique
+    * Position recommandée (assise, allongée)
+    * Alignement spécifique du corps
+    * Placement des mains et des jambes
+* Environnement optimal
+    * Recommandations sensorielles (lumière, bruit)
+    * Ajustements à faire selon le contexte actuel
+* État d'esprit initial
+    * Intention et objectif spécifique
+    * Attitude recommandée (curiosité, non-jugement)
+2. Phase d'ancrage (3-5 minutes)
+* Guide respiratoire précis
+    * Rythme respiratoire spécifique (ratio inspiration/expiration)
+    * Points d'attention et sensations à observer
+    * Techniques de comptage ou visualisation
+* Points d'attention corporelle
+    * Scan corporel dirigé, de haut en bas
+    * Relâchement progressif des tensions
+3. Pratique principale (10-20 minutes)
+* Instructions étape par étape
+    * Objet d'attention principal
+    * Gestion des distractions spécifique au niveau
+    * Technique centrale correspondant à l'objectif
+* Points de rappel réguliers
+    * Retour à l'intention initiale
+    * Adaptation en cas de difficultés
+4. Conclusion (2-3 minutes)
+* Transition graduelle
+    * Élargissement progressif de l'attention
+    * Reconnexion avec l'environnement
+* Intégration
+    * Moment de réflexion guidée
+    * Invitation à noter les observations
+* Transition vers la suite
+Assure-toi d'utiliser un langage apaisant avec un rythme adaptée à une méditation, des pauses appropriées, et des instructions suffisamment détaillées pour que je puisse suivre sans confusion. Adapte la complexité des techniques à mon niveau d'expérience indiqué. [/INSTRUCTION]
+
+26. Propose-moi des idées créatives
+
+[INSTRUCTION] Agis comme un facilitateur expert en innovation et créativité. Organise une session de brainstorming virtuelle pour générer des idées créatives, originales et applicables pour [PROJET/PROBLÈME] en suivant une méthodologie structurée.
+Phase 1: Cadrage du défi (préalable)
+* Reformulation du défi sous forme de question "Comment pourrait-on..." (HMW)
+* Identification des contraintes non-négociables
+* Clarification des critères de réussite
+Phase 2: Divergence - Génération massive d'idées
+* Génère 15-20 idées réparties en catégories:
+    * Solutions conventionnelles optimisées (20%)
+    * Approches par analogie avec d'autres domaines (30%)
+    * Concepts disruptifs/non-conventionnels (30%)
+    * Idées provocatrices "et si..." (20%)
+Pour chaque idée, fournis:
+* Titre évocateur et mémorable
+* Description concise (2-3 phrases)
+* Principe clé qui la sous-tend
+* Catégorie d'innovation (incrémentale, adjacente, transformationnelle)
+Phase 3: Clustering thématique
+* Identification de 3-5 territoires d'opportunités
+* Regroupement des idées par thèmes émergents
+* Nommage inspirant de chaque territoire
+Phase 4: Convergence sélective
+* Évaluation des idées les plus prometteuses selon:
+    * Impact potentiel (1-5)
+    * Faisabilité relative (1-5)
+    * Originalité (1-5)
+    * Alignement avec les objectifs (1-5)
+* Sélection des 3-5 concepts prioritaires à développer
+* Pistes de combinaison ou d'hybridation entre idées
+Phase 5: Prochaines étapes
+* Pour chaque idée sélectionnée:
+    * Questions à explorer pour la développer
+    * Ressources potentiellement nécessaires
+    * Prochaines actions concrètes
+Utilise des techniques de pensée latérale, de provocation créative et d'association forcée pour générer des idées véritablement originales. Évite les concepts génériques ou évidents. Cherche un équilibre entre idées immédiatement actionnables et concepts plus ambitieux à long terme. [/INSTRUCTION]
+
+27. Prépare-moi un plan de retraite personnalisé
+
+[INSTRUCTION] Agis comme un conseiller financier certifié, spécialisé en planification de retraite. Prépare-moi un plan de retraite personnalisé structuré, complet et actionnable.
+Informations personnelles à considérer:
+* Âge actuel: [ÂGE]
+* Âge souhaité pour la retraite: [ÂGE CIBLE]
+* Situation professionnelle: [PROFESSION/STATUT]
+* Revenu annuel actuel: [MONTANT]
+* Épargne/investissements existants: [MONTANT PAR CATÉGORIE]
+* Situation familiale: [STATUT]
+* Objectifs de vie à la retraite: [DESCRIPTION]
+1. Analyse de la situation actuelle
+* Évaluation de l'écart entre l'épargne existante et les besoins estimés
+* Taux d'épargne actuel et sa suffisance
+* Forces et vulnérabilités de la préparation actuelle
+* Horizon temporel et ses implications
+2. Estimation des besoins financiers
+* Calcul du capital nécessaire basé sur:
+    * Dépenses mensuelles projetées à la retraite
+    * Inflation anticipée (taux composé)
+    * Espérance de vie statistique + marge
+    * Sources de revenus garantis (pensions, rentes, etc.)
+* Montant cible total avec justification détaillée
+3. Stratégie d'investissement recommandée
+* Allocation d'actifs optimale selon l'horizon et la tolérance au risque
+    * Répartition précise par classes d'actifs (%)
+    * Logique derrière chaque allocation
+* Véhicules d'investissement prioritaires
+    * Options fiscalement avantageuses
+    * Séquence optimale de priorités
+* Stratégie de contribution annuelle
+    * Montants recommandés par véhicule
+    * Fréquence et automatisation
+4. Plan d'action chronologique
+* Actions immédiates (0-3 mois)
+    * Étapes précises et prioritaires
+* Actions à court terme (3-12 mois)
+    * Ajustements et optimisations
+* Plan pluriannuel (1-5 ans)
+    * Jalons de progression et révisions
+* Stratégie de transition vers la retraite (5 ans avant)
+    * Ajustements de l'allocation d'actifs
+    * Préparation de la décumulation
+5. Gestion des risques
+* Protection contre les imprévus majeurs
+    * Assurances recommandées
+    * Fonds d'urgence
+* Stratégies d'adaptation aux scénarios défavorables
+    * Marchés baissiers prolongés
+    * Inflation excessive
+    * Longévité supérieure aux projections
+6. Suivi et ajustements
+* Indicateurs clés à surveiller
+* Fréquence et nature des révisions
+* Événements déclencheurs d'une refonte du plan
+Fournis un plan personnalisé, basé sur des principes financiers solides, qui tient compte des spécificités de ma situation tout en restant flexible pour s'adapter aux évolutions futures de ma vie. [/INSTRUCTION]
