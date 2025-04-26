@@ -44,9 +44,9 @@ body {
     line-height: 1.6;
     color: var(--naval-text-grey);
     background-color: var(--white);
-    display: flex; /* Décommenté */
-    flex-direction: column; /* Décommenté */
-    min-height: 100vh; /* Décommenté */
+    display: flex; 
+    flex-direction: column; /* Explicitement défini pour mobile-first */
+    min-height: 100vh; 
 }
 
 /* header, page-wrapper, sidebar, main, footer, etc. décommentés */
@@ -74,13 +74,15 @@ header h1 {
 .page-wrapper {
     display: flex;
     flex: 1; 
+    flex-direction: column; /* Mobile default: sidebar above main */
 }
 
 aside.sidebar {
-    width: var(--sidebar-width);
+    width: 100%; /* Mobile default: full width */
     background-color: var(--white); 
     padding: 1rem 0; 
-    border-right: 1px solid var(--naval-light-grey); 
+    border-bottom: 1px solid var(--naval-light-grey); /* Mobile: border at bottom */
+    /* border-right: none;  Should be default */
     overflow-y: auto; 
 }
 
@@ -167,7 +169,7 @@ aside.sidebar nav ul ul li a.active {
 
 main {
     flex: 1; 
-    padding: 3rem;
+    padding: 1.5rem; /* Reduced padding for mobile */
     overflow-y: auto; 
 }
 
@@ -255,22 +257,52 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* --- Responsive Adjustments --- */
+
+/* Styles pour tablettes et ordinateurs */
 @media (min-width: 768px) {
-    body {
-       /* Garde la structure flex colonne pour header/footer pleine largeur */
-    }
     .page-wrapper {
-        flex-direction: row; 
+        flex-direction: row; /* Sidebar next to main */
     }
     aside.sidebar {
-        width: var(--sidebar-width);
-        border-right: 1px solid var(--naval-light-grey); 
-        border-bottom: none;
+        width: var(--sidebar-width); /* Restore fixed width */
+        border-right: 1px solid var(--naval-light-grey); /* Add right border */
+        border-bottom: none; /* Remove bottom border */
         max-height: none; 
     }
      main {
-        padding: 3rem;
+        padding: 3rem; /* Restore larger padding */
     }
+    /* Assurez-vous que la fenêtre de chat conserve son style bureau */
+    #chatbot-window {
+        width: 350px;
+        height: 500px;
+        bottom: 100px;
+        right: 30px;
+    }
+}
+
+/* Styles spécifiques pour petits écrans (mobiles) pour le chatbot */
+@media (max-width: 767px) {
+    #chatbot-window {
+        width: 90vw; /* Prend presque toute la largeur */
+        height: 75vh; /* Prend plus de hauteur */
+        bottom: 15px; /* Plus près du bas */
+        right: 15px; /* Plus près du bord */
+        max-width: 400px; /* Évite d'être trop large même en vw */
+        max-height: 600px; /* Limite la hauteur */
+    }
+    #chatbot-fab {
+        bottom: 15px;
+        right: 15px;
+        width: 55px;
+        height: 55px;
+        font-size: 2.2rem;
+    }
+    /* Optionnel: réduire la taille de la police principale sur très petits écrans */
+    /* html {
+        font-size: 58%; 
+    } */
 } 
 
 /* Style du bouton Principal */
