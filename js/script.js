@@ -2,126 +2,127 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const promptCategories = document.getElementById('prompt-categories');
-    const fullPromptTextarea = document.getElementById('full-prompt');
-    // const userInputTextarea = document.getElementById('user-input'); // Supprimé
+    const fullPromptDiv = document.getElementById('full-prompt');
     const runPromptBtn = document.getElementById('run-prompt-btn');
     const promptDisplayDiv = document.querySelector('.prompt-display');
     const resultDisplayDiv = document.querySelector('.result-display');
     const llmResultDiv = document.getElementById('llm-result');
-    // Ajout des références aux lignes de label
     const promptLabelLine = document.getElementById('prompt-label-line');
     const resultLabelLine = document.getElementById('result-label-line');
 
     let currentActivePromptLink = null;
 
+    // Fonction pour parser et styliser le prompt pour l'affichage dans la div
+    function parseAndStylePrompt(text) {
+        // 1. Remplacer les &#10; par des <br> pour l'affichage HTML
+        let styledText = text.replace(/&#10;/g, '<br>');
+        // 2. Trouver les [placeholder] et les entourer d'un span stylisé
+        styledText = styledText.replace(/(\[.*?\])/g, '<span class="prompt-placeholder">$1</span>');
+        return styledText;
+    }
+
     // Fonction pour afficher la vue du prompt
     function showPromptView() {
         if (resultDisplayDiv) resultDisplayDiv.style.display = 'none';
-        if (resultLabelLine) resultLabelLine.style.display = 'none'; // Cacher le label résultat
+        if (resultLabelLine) resultLabelLine.style.display = 'none'; 
 
         if (promptDisplayDiv) promptDisplayDiv.style.display = 'block';
-        if (promptLabelLine) promptLabelLine.style.display = 'flex'; // Afficher le label prompt (utiliser 'flex' car défini en CSS)
+        if (promptLabelLine) promptLabelLine.style.display = 'flex'; 
     }
 
     // Fonction pour afficher la vue du résultat
     function showResultView() {
         if (promptDisplayDiv) promptDisplayDiv.style.display = 'none';
-        if (promptLabelLine) promptLabelLine.style.display = 'none'; // Cacher le label prompt
+        if (promptLabelLine) promptLabelLine.style.display = 'none'; 
 
         if (resultDisplayDiv) resultDisplayDiv.style.display = 'block'; 
-        if (resultLabelLine) resultLabelLine.style.display = 'flex'; // Afficher le label résultat (utiliser 'flex')
+        if (resultLabelLine) resultLabelLine.style.display = 'flex'; 
     }
 
     if (promptCategories) {
         promptCategories.addEventListener('click', (event) => {
-            // Vérifier si l'élément cliqué est bien un lien de prompt (<a>)
             if (event.target.tagName === 'A' && event.target.dataset.prompt) {
-                event.preventDefault(); // Empêcher le comportement par défaut du lien
+                event.preventDefault(); 
 
                 const selectedPromptText = event.target.dataset.prompt;
-                fullPromptTextarea.value = selectedPromptText;
+                // Utiliser innerHTML avec le texte parsé pour la div
+                if (fullPromptDiv) {
+                    fullPromptDiv.innerHTML = parseAndStylePrompt(selectedPromptText);
+                }
 
-                // Gérer le style actif
                 if (currentActivePromptLink) {
                     currentActivePromptLink.classList.remove('active');
                 }
                 event.target.classList.add('active');
                 currentActivePromptLink = event.target;
 
-                // Revenir à la vue du prompt et réinitialiser le bouton
                 showPromptView();
                 if(runPromptBtn) runPromptBtn.textContent = 'Exécuter le Prompt';
 
-                console.log(`Prompt sélectionné: ${selectedPromptText}`);
+                // console.log(`Prompt sélectionné (brut): ${selectedPromptText}`);
             }
         });
     }
 
     // --- Logique pour le bouton "Exécuter le Prompt" ---
-    if (runPromptBtn) {
-        runPromptBtn.addEventListener('click', async () => { // Utiliser async pour await
-
-            // Comportement différent selon le texte du bouton
+    if (runPromptBtn && fullPromptDiv) { // S'assurer que fullPromptDiv existe
+        runPromptBtn.addEventListener('click', async () => {
             if (runPromptBtn.textContent === 'Modifier le prompt') {
                 showPromptView();
+                // Rendre la div éditable (elle l'est déjà par défaut avec contenteditable=true)
+                // fullPromptDiv.focus(); // Mettre le focus si souhaité
                 runPromptBtn.textContent = 'Exécuter le Prompt';
-                return; // Ne pas exécuter l'appel API
+                return; 
             }
 
-            // Si le texte est "Exécuter le Prompt"
-            const fullPrompt = fullPromptTextarea.value;
-            const apiKey = "76cwpvjZqnFw1U0jLCEBKOHh5FprX2OJ"; // !!! CLÉ API EXPOSÉE !!!
+            // Lire le contenu textuel de la div pour l'API
+            const fullPrompt = fullPromptDiv.textContent || ''; 
+            const apiKey = "76cwpvjZqnFw1U0jLCEBKOHh5FprX2OJ"; 
 
-            if (!fullPrompt) {
-                alert("Veuillez d'abord sélectionner un prompt dans le menu.");
+            if (!fullPrompt.trim()) { // Vérifier si le contenu textuel est vide
+                alert("Veuillez d'abord sélectionner ou écrire un prompt.");
                 return;
             }
             if (!apiKey) {
-                alert("Erreur: Clé API manquante."); // Sécurité basique
+                alert("Erreur: Clé API manquante."); 
                 return;
             }
 
-
-            // Afficher l'état de chargement
             const originalButtonText = runPromptBtn.textContent;
             runPromptBtn.textContent = 'Exécution en cours...';
             runPromptBtn.disabled = true;
-            if (llmResultDiv) llmResultDiv.textContent = 'Chargement...'; // Indiquer le chargement
-             showResultView(); // Afficher la zone résultat pendant le chargement
-
+            if (llmResultDiv) llmResultDiv.textContent = 'Chargement...';
+             showResultView();
 
             try {
-                // --- Appel réel à l'API Mistral ---
                 const response = await fetch('https://api.mistral.ai/v1/chat/completions', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json',
-                        'Authorization': `Bearer ${apiKey}` // La clé API est ici
+                        'Authorization': `Bearer ${apiKey}` 
                     },
                     body: JSON.stringify({
-                         model: "mistral-small-latest", // Vous pouvez changer ce modèle si besoin (ex: mistral-7b-instruct-v0.2 si disponible)
+                         model: "mistral-small-latest", 
                          messages: [
                              {
                                  role: "user",
-                                 content: fullPrompt
+                                 content: fullPrompt // Utiliser le textContent de la div
                              }
                          ],
                          temperature: 0.7,
-                         max_tokens: 32000, // Positionné à 32000
-                         stream: false // On attend la réponse complète
+                         max_tokens: 32000, 
+                         stream: false 
                     })
                 });
 
                 if (!response.ok) {
-                    // Gérer les erreurs HTTP (ex: 4xx, 5xx) venant de l'API Mistral
-                    const errorData = await response.json().catch(() => ({ message: `Erreur HTTP ${response.status}` })); // Tenter de lire le JSON d'erreur
+                    const errorData = await response.json().catch(() => ({ message: `Erreur HTTP ${response.status}` }));
                     throw new Error(errorData.message || `Erreur API Mistral: ${response.status}`);
                 }
 
                 const resultData = await response.json();
 
-                // Afficher le résultat reçu de Mistral
                 if (llmResultDiv) {
                     if (resultData.choices && resultData.choices.length > 0 && resultData.choices[0].message) {
                          llmResultDiv.textContent = resultData.choices[0].message.content;
@@ -130,19 +131,15 @@ document.addEventListener('DOMContentLoaded', () => {
                          console.warn("Format de réponse inattendu:", resultData);
                     }
                 }
-               // showResultView(); // Déjà fait avant le try
 
             } catch (error) {
-                // Gérer les erreurs réseau ou les erreurs levées
                 console.error("Erreur lors de l'appel API Mistral:", error);
                 alert(`Une erreur est survenue lors de l'appel à Mistral: ${error.message}`);
                 if (llmResultDiv) {
                     llmResultDiv.textContent = `Erreur: ${error.message}`;
                 }
-               // showResultView(); // Déjà fait avant le try
             } finally {
-                // Rétablir le bouton ET changer son texte dans tous les cas (succès ou erreur)
-                runPromptBtn.textContent = 'Modifier le prompt'; // Nouveau texte
+                runPromptBtn.textContent = 'Modifier le prompt'; 
                 runPromptBtn.disabled = false;
             }
         });
@@ -164,18 +161,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Logique pour les boutons/spans de copie --- 
     const copyPromptBtn = document.getElementById('copy-prompt-btn');
     const copyResultBtn = document.getElementById('copy-result-btn');
-    const promptTextarea = document.getElementById('full-prompt'); // Cible la textarea pour le prompt
-    const resultDiv = document.getElementById('llm-result'); // Cible la div de résultat par son ID
+    const resultDiv = document.getElementById('llm-result'); 
 
-    if (copyPromptBtn && promptTextarea) {
+    if (copyPromptBtn && fullPromptDiv) { // Utiliser fullPromptDiv
         copyPromptBtn.addEventListener('click', () => {
-            copyToClipboard(promptTextarea.value, copyPromptBtn);
+            // Copier le contenu textuel de la div
+            copyToClipboard(fullPromptDiv.textContent || '', copyPromptBtn); 
         });
     }
 
     if (copyResultBtn && resultDiv) {
         copyResultBtn.addEventListener('click', () => {
-            // Utiliser textContent pour obtenir le texte brut de la div
             copyToClipboard(resultDiv.textContent || '', copyResultBtn); 
         });
     }
@@ -184,28 +180,23 @@ document.addEventListener('DOMContentLoaded', () => {
     function copyToClipboard(text, buttonElement) {
         if (!text) {
              console.warn("Tentative de copie de texte vide.");
-             // Optionnel : retour visuel pour indiquer qu'il n'y a rien à copier
              buttonElement.classList.add('copy-error');
              setTimeout(() => {
                  buttonElement.classList.remove('copy-error');
              }, 1000);
-             return; // Ne rien faire si le texte est vide
+             return; 
         }
         
         navigator.clipboard.writeText(text).then(() => {
-            // Succès de la copie
-            buttonElement.classList.add('copied'); // Ajoute la classe pour le style
-
-            // Réinitialise le style après un court délai
+            buttonElement.classList.add('copied'); 
             setTimeout(() => {
                 buttonElement.classList.remove('copied');
-            }, 1500); // 1.5 secondes
+            }, 1500); 
         }).catch(err => {
             console.error('Erreur lors de la copie: ', err);
-            // Gérer l'erreur visuellement
-            buttonElement.classList.add('copy-error'); // Ajout d'une classe pour l'erreur
+            buttonElement.classList.add('copy-error'); 
              setTimeout(() => {
-                buttonElement.classList.remove('copy-error'); // Retire la classe d'erreur
+                buttonElement.classList.remove('copy-error'); 
             }, 1500);
         });
     }

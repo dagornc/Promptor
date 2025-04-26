@@ -373,6 +373,34 @@ footer a:hover {
     min-height: 100px; /* Hauteur minimale pour la div de sortie */
 }
 
+/* Styles spécifiques pour la nouvelle DIV de prompt */
+.prompt-display-div {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--naval-medium-grey);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1.8rem; /* Taille de police augmentée */
+    line-height: 1.7; /* Ajustement interligne */
+    background-color: var(--white);
+    min-height: 400px; /* Hauteur similaire à rows=28 */
+    white-space: pre-wrap; /* Conserve les retours à la ligne */
+    word-wrap: break-word;
+    resize: vertical; /* Permettre le redimensionnement vertical */
+    overflow: auto; /* Ajoute une barre de défilement si nécessaire */
+}
+
+.prompt-display-div:focus {
+    outline: 2px solid var(--naval-dark-blue);
+    border-color: transparent;
+}
+
+/* Style pour les placeholders dans le prompt */
+.prompt-placeholder {
+    color: var(--naval-dark-blue);
+    font-weight: bold;
+}
+
 .result-display .llm-output {
     white-space: pre-wrap; /* Conserve les retours à la ligne et espaces */
     word-wrap: break-word; /* Coupe les mots longs */
