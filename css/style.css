@@ -665,4 +665,231 @@ footer a:hover {
 
 #chat-send-btn:hover {
     background-color: #001f45;
-} 
+}
+
+/* --- Style pour le bouton icône Dark Mode --- */
+#dark-mode-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: auto; /* Pousse le bouton à droite */
+    font-size: 2.2rem; /* Taille de l'icône */
+    line-height: 1;
+    color: var(--naval-text-grey); /* Couleur icône en mode clair */
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#dark-mode-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Couleur de l'icône en mode sombre */
+body.dark-mode #dark-mode-toggle-btn {
+    color: #f1c40f; /* Jaune soleil */
+}
+
+/* --- Dark Mode Styles --- */
+body.dark-mode {
+    --naval-dark-blue: #aaccff; /* Adjusted blue for text */
+    --naval-light-grey: #2a2a2a; /* Darker grey for borders/backgrounds */
+    --naval-medium-grey: #444444; /* Medium dark grey */
+    --naval-text-grey: #e0e0e0; /* Light grey text */
+    --white: #121212; /* Very dark background */
+    --black: #ffffff; /* White text/elements */
+
+    background-color: var(--white);
+    color: var(--naval-text-grey);
+    border-color: var(--naval-light-grey); /* Ensure borders also change */
+}
+
+/* Ajustements spécifiques pour le mode sombre */
+body.dark-mode header {
+    background-color: #1e1e1e; /* Slightly lighter than body bg */
+    border-bottom-color: var(--naval-light-grey);
+}
+
+body.dark-mode header h1 {
+    color: var(--naval-dark-blue); /* Keep the adjusted blue for title */
+}
+
+body.dark-mode aside.sidebar {
+    background-color: #1e1e1e;
+    border-color: var(--naval-light-grey);
+}
+
+body.dark-mode aside.sidebar nav h2 {
+    color: var(--naval-dark-blue);
+    border-bottom-color: var(--naval-light-grey);
+}
+
+body.dark-mode aside.sidebar nav ul li details summary {
+    color: var(--naval-text-grey); /* Light text on dark blue */
+    background-color: #003366; /* Darker blue */
+}
+body.dark-mode aside.sidebar nav ul li details summary:hover {
+    background-color: #004488;
+}
+body.dark-mode aside.sidebar nav ul li details summary::after {
+     border-right-color: var(--naval-text-grey);
+     border-bottom-color: var(--naval-text-grey);
+}
+
+body.dark-mode aside.sidebar nav ul ul li a {
+    color: var(--naval-text-grey);
+    border-bottom-color: var(--naval-light-grey);
+}
+
+body.dark-mode aside.sidebar nav ul ul li a:hover {
+    color: var(--naval-dark-blue);
+    background-color: var(--naval-light-grey);
+}
+
+body.dark-mode aside.sidebar nav ul ul li a.active {
+    background-color: var(--naval-dark-blue); /* Use the adjusted light blue */
+    color: #000; /* Black text on light blue bg */
+    font-weight: bold;
+}
+
+
+body.dark-mode main {
+    background-color: var(--white); /* Main content area bg */
+}
+
+body.dark-mode .prompt-interface label,
+body.dark-mode .result-display label,
+body.dark-mode .label-line label {
+    color: var(--naval-dark-blue);
+}
+
+body.dark-mode .prompt-interface textarea,
+body.dark-mode .prompt-display-div,
+body.dark-mode .result-display .output-content,
+body.dark-mode .result-display .llm-output,
+body.dark-mode #chat-input {
+    background-color: #2c2c2c; /* Dark background for text areas/outputs */
+    color: var(--naval-text-grey);
+    border-color: var(--naval-medium-grey);
+}
+
+body.dark-mode .prompt-interface textarea:focus,
+body.dark-mode .prompt-display-div:focus,
+body.dark-mode #chat-input:focus {
+    outline-color: var(--naval-dark-blue);
+    border-color: transparent;
+}
+
+
+body.dark-mode .output-content, /* Generic output */
+body.dark-mode .result-display .output-content /* Result specific */ {
+    background-color: #252525; /* Slightly different bg for outputs */
+    border-color: var(--naval-medium-grey);
+}
+
+body.dark-mode footer {
+    background-color: #1e1e1e;
+    color: var(--naval-text-grey);
+}
+
+body.dark-mode footer p {
+     color: #aaaaaa; /* Lighter grey for footer text */
+}
+
+/* Buttons in dark mode */
+body.dark-mode button,
+body.dark-mode .copy-btn,
+body.dark-mode .press-copy-btn .copy-trigger,
+body.dark-mode #chat-send-btn,
+body.dark-mode #chat-suggestions button {
+    background-color: #004488; /* Darker blue background */
+    color: var(--naval-text-grey);
+    border: 1px solid #0055aa;
+}
+
+body.dark-mode button:hover,
+body.dark-mode .copy-btn:hover,
+body.dark-mode .press-copy-btn:hover .copy-trigger,
+body.dark-mode #chat-send-btn:hover,
+body.dark-mode #chat-suggestions button:hover {
+    background-color: #0055aa; /* Lighter blue on hover */
+    border-color: #0066cc;
+}
+
+body.dark-mode .copy-btn.copied,
+body.dark-mode .press-copy-btn.copied .copy-trigger {
+    background-color: #0077cc; /* Indicate success */
+}
+
+body.dark-mode .copy-btn.copy-error,
+body.dark-mode .press-copy-btn.copy-error {
+    background-color: var(--naval-red-accent); /* Error color */
+}
+
+body.dark-mode #run-prompt-btn {
+    background-color: var(--naval-red-accent);
+    color: var(--black); /* White text */
+     border: 1px solid #c40021;
+}
+body.dark-mode #run-prompt-btn:hover {
+    background-color: #c40021; /* Darker red on hover */
+     border-color: #a3001b;
+}
+
+/* Chatbot dark mode */
+body.dark-mode #chatbot-fab {
+     background-color: var(--naval-red-accent);
+}
+body.dark-mode #chatbot-fab:hover {
+     background-color: #c40021;
+}
+body.dark-mode #chatbot-window {
+    background-color: #1e1e1e;
+    border: 1px solid var(--naval-medium-grey);
+}
+body.dark-mode #chatbot-header {
+     background-color: #003366;
+     color: var(--naval-text-grey);
+     border-bottom-color: var(--naval-medium-grey);
+}
+body.dark-mode #close-chatbot-btn {
+     color: var(--naval-text-grey);
+}
+body.dark-mode #close-chatbot-btn:hover {
+     color: var(--white);
+}
+body.dark-mode .chat-message {
+     /* border-color: var(--naval-medium-grey); No border on messages */
+}
+body.dark-mode .user-message {
+    background-color: #004488; /* User message background */
+    color: var(--naval-text-grey);
+}
+body.dark-mode .bot-message {
+    background-color: #2c2c2c; /* Bot message background */
+    color: var(--naval-text-grey);
+}
+
+/* Scrollbars for dark mode - Webkit browsers */
+body.dark-mode ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+body.dark-mode ::-webkit-scrollbar-track {
+    background: #2a2a2a;
+}
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4px;
+    border: 2px solid #2a2a2a;
+}
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background-color: #777;
+}
+
+/* Scrollbars for dark mode - Firefox */
+body.dark-mode * {
+  scrollbar-width: thin;
+  scrollbar-color: #555 #2a2a2a;
+}
+
+/* --- Fin Dark Mode Styles --- */ 

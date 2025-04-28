@@ -1,6 +1,122 @@
 // Fichier JavaScript principal 
 
 document.addEventListener('DOMContentLoaded', () => {
+    const sidebarToggleButton = document.getElementById('sidebar-toggle-button');
+    const sidebar = document.querySelector('.sidebar'); // Sélectionne par classe
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+    // --- Logique pour afficher/masquer la sidebar sur mobile --- 
+    if (sidebarToggleButton && sidebar && sidebarOverlay) {
+        sidebarToggleButton.addEventListener('click', () => {
+            const isExpanded = sidebarToggleButton.getAttribute('aria-expanded') === 'true';
+            document.body.classList.toggle('sidebar-mobile-active');
+            sidebarToggleButton.classList.toggle('active');
+            sidebarToggleButton.setAttribute('aria-expanded', !isExpanded);
+            // Empêcher le scroll du body quand la sidebar est ouverte
+            document.body.style.overflow = !isExpanded ? 'hidden' : '';
+        });
+
+        // Fermer la sidebar en cliquant sur l'overlay
+        sidebarOverlay.addEventListener('click', () => {
+            document.body.classList.remove('sidebar-mobile-active');
+            sidebarToggleButton.classList.remove('active');
+            sidebarToggleButton.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = ''; // Réactiver le scroll
+        });
+
+        // Fermer la sidebar en cliquant sur un lien dedans
+        sidebar.addEventListener('click', (event) => {
+            // Vérifier si on est en mode mobile (body a la classe active) et si on a cliqué sur un lien
+            if (document.body.classList.contains('sidebar-mobile-active') && event.target.tagName === 'A') {
+                 document.body.classList.remove('sidebar-mobile-active');
+                 sidebarToggleButton.classList.remove('active');
+                 sidebarToggleButton.setAttribute('aria-expanded', 'false');
+                 document.body.style.overflow = ''; // Réactiver le scroll
+            }
+        });
+    }
+
+    // --- Logique pour le redimensionnement de la sidebar --- (Code existant)
+    const dragHandle = document.getElementById('dragHandle');
+    // const sidebar = document.querySelector('.sidebar'); // Déjà sélectionné plus haut
+    let isResizing = false;
+    let startX, startWidth;
+
+    if (dragHandle && sidebar) {
+        dragHandle.addEventListener('mousedown', (e) => {
+            isResizing = true;
+            startX = e.clientX;
+            startWidth = sidebar.offsetWidth;
+            // Empêche la sélection de texte pendant le glisser
+            document.addEventListener('selectstart', preventSelection);
+            document.addEventListener('mousemove', handleMouseMove);
+            document.addEventListener('mouseup', stopResizing);
+        });
+    }
+
+    function handleMouseMove(e) {
+        if (!isResizing) return;
+        const currentX = e.clientX;
+        const diffX = currentX - startX;
+        let newWidth = startWidth + diffX;
+
+        // Limiter la largeur minimale et maximale
+        const minWidth = 150; // Largeur minimale
+        const maxWidth = 500; // Largeur maximale
+        if (newWidth < minWidth) newWidth = minWidth;
+        if (newWidth > maxWidth) newWidth = maxWidth;
+
+        sidebar.style.width = `${newWidth}px`;
+    }
+
+    function stopResizing() {
+        if (isResizing) {
+            isResizing = false;
+            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('mouseup', stopResizing);
+            document.removeEventListener('selectstart', preventSelection);
+        }
+    }
+
+    function preventSelection(e) {
+        e.preventDefault();
+    }
+
+    // --- Logique pour le Dark Mode --- 
+    const darkModeButton = document.getElementById('dark-mode-toggle-btn');
+    const darkModeIcon = document.getElementById('dark-mode-icon');
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+    // Fonction pour appliquer le thème ET mettre à jour l'icône
+    function applyTheme(isDark) {
+        if (isDark) {
+            document.body.classList.add('dark-mode');
+            if (darkModeIcon) darkModeIcon.textContent = '☀️'; // Soleil
+        } else {
+            document.body.classList.remove('dark-mode');
+            if (darkModeIcon) darkModeIcon.textContent = '🌙'; // Lune
+        }
+    }
+
+    // Vérifier la préférence système au chargement et appliquer
+    const systemPrefersDark = prefersDarkScheme.matches;
+    applyTheme(systemPrefersDark);
+
+    // Écouter les changements de préférence système
+    prefersDarkScheme.addEventListener('change', (e) => applyTheme(e.matches));
+
+    // Gérer le clic sur le bouton
+    if (darkModeButton) {
+        darkModeButton.addEventListener('click', () => {
+            const isCurrentlyDark = document.body.classList.contains('dark-mode');
+            applyTheme(!isCurrentlyDark); // Inverse le thème actuel
+        });
+    } else {
+        console.error('Bouton pour le mode sombre non trouvé!');
+    }
+    // --- Fin Logique Dark Mode ---
+
+    // --- Logique pour charger les prompts et gérer l'API --- (Code existant)
     const promptCategories = document.getElementById('prompt-categories');
     const fullPromptDiv = document.getElementById('full-prompt');
     const runPromptBtn = document.getElementById('run-prompt-btn');
@@ -9,32 +125,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const llmResultDiv = document.getElementById('llm-result');
     const promptLabelLine = document.getElementById('prompt-label-line');
     const resultLabelLine = document.getElementById('result-label-line');
-
     let currentActivePromptLink = null;
 
-    // Fonction pour parser et styliser le prompt pour l'affichage dans la div
     function parseAndStylePrompt(text) {
-        // 1. Remplacer les &#10; par des <br> pour l'affichage HTML
         let styledText = text.replace(/&#10;/g, '<br>');
-        // 2. Trouver les [placeholder] et les entourer d'un span stylisé
         styledText = styledText.replace(/(\[.*?\])/g, '<span class="prompt-placeholder">$1</span>');
         return styledText;
     }
 
-    // Fonction pour afficher la vue du prompt
     function showPromptView() {
         if (resultDisplayDiv) resultDisplayDiv.style.display = 'none';
         if (resultLabelLine) resultLabelLine.style.display = 'none'; 
-
         if (promptDisplayDiv) promptDisplayDiv.style.display = 'block';
         if (promptLabelLine) promptLabelLine.style.display = 'flex'; 
     }
 
-    // Fonction pour afficher la vue du résultat
     function showResultView() {
         if (promptDisplayDiv) promptDisplayDiv.style.display = 'none';
         if (promptLabelLine) promptLabelLine.style.display = 'none'; 
-
         if (resultDisplayDiv) resultDisplayDiv.style.display = 'block'; 
         if (resultLabelLine) resultLabelLine.style.display = 'flex'; 
     }
@@ -43,43 +151,31 @@ document.addEventListener('DOMContentLoaded', () => {
         promptCategories.addEventListener('click', (event) => {
             if (event.target.tagName === 'A' && event.target.dataset.prompt) {
                 event.preventDefault(); 
-
                 const selectedPromptText = event.target.dataset.prompt;
-                // Utiliser innerHTML avec le texte parsé pour la div
                 if (fullPromptDiv) {
                     fullPromptDiv.innerHTML = parseAndStylePrompt(selectedPromptText);
                 }
-
                 if (currentActivePromptLink) {
                     currentActivePromptLink.classList.remove('active');
                 }
                 event.target.classList.add('active');
                 currentActivePromptLink = event.target;
-
                 showPromptView();
                 if(runPromptBtn) runPromptBtn.textContent = 'Exécuter le Prompt';
-
-                // console.log(`Prompt sélectionné (brut): ${selectedPromptText}`);
             }
         });
     }
 
-    // --- Logique pour le bouton "Exécuter le Prompt" ---
-    if (runPromptBtn && fullPromptDiv) { // S'assurer que fullPromptDiv existe
+    if (runPromptBtn && fullPromptDiv) {
         runPromptBtn.addEventListener('click', async () => {
             if (runPromptBtn.textContent === 'Modifier le prompt') {
                 showPromptView();
-                // Rendre la div éditable (elle l'est déjà par défaut avec contenteditable=true)
-                // fullPromptDiv.focus(); // Mettre le focus si souhaité
                 runPromptBtn.textContent = 'Exécuter le Prompt';
                 return; 
             }
-
-            // Lire le contenu textuel de la div pour l'API
             const fullPrompt = fullPromptDiv.textContent || ''; 
             const apiKey = "76cwpvjZqnFw1U0jLCEBKOHh5FprX2OJ"; 
-
-            if (!fullPrompt.trim()) { // Vérifier si le contenu textuel est vide
+            if (!fullPrompt.trim()) {
                 alert("Veuillez d'abord sélectionner ou écrire un prompt.");
                 return;
             }
@@ -87,13 +183,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert("Erreur: Clé API manquante."); 
                 return;
             }
-
             const originalButtonText = runPromptBtn.textContent;
             runPromptBtn.textContent = 'Exécution en cours...';
             runPromptBtn.disabled = true;
             if (llmResultDiv) llmResultDiv.textContent = 'Chargement...';
              showResultView();
-
             try {
                 const response = await fetch('https://api.mistral.ai/v1/chat/completions', {
                     method: 'POST',
@@ -104,25 +198,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     body: JSON.stringify({
                          model: "mistral-small-latest", 
-                         messages: [
-                             {
-                                 role: "user",
-                                 content: fullPrompt // Utiliser le textContent de la div
-                             }
-                         ],
+                         messages: [{ role: "user", content: fullPrompt }],
                          temperature: 0.7,
                          max_tokens: 32000, 
                          stream: false 
                     })
                 });
-
                 if (!response.ok) {
                     const errorData = await response.json().catch(() => ({ message: `Erreur HTTP ${response.status}` }));
                     throw new Error(errorData.message || `Erreur API Mistral: ${response.status}`);
                 }
-
                 const resultData = await response.json();
-
                 if (llmResultDiv) {
                     if (resultData.choices && resultData.choices.length > 0 && resultData.choices[0].message) {
                          llmResultDiv.textContent = resultData.choices[0].message.content;
@@ -131,7 +217,6 @@ document.addEventListener('DOMContentLoaded', () => {
                          console.warn("Format de réponse inattendu:", resultData);
                     }
                 }
-
             } catch (error) {
                 console.error("Erreur lors de l'appel API Mistral:", error);
                 alert(`Une erreur est survenue lors de l'appel à Mistral: ${error.message}`);
@@ -145,38 +230,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // La fonction generateLoremIpsum n'est plus nécessaire pour le résultat réel, mais peut être gardée pour d'autres tests si besoin.
-    function generateLoremIpsum(wordCount) {
-        const words = ["lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "sed", "do", "eiusmod", "tempor", "incididunt", "ut", "labore", "et", "dolore", "magna", "aliqua"];
-        let text = "";
-        for (let i = 0; i < wordCount; i++) {
-            text += words[Math.floor(Math.random() * words.length)] + " ";
-        }
-        return text.trim() + ".";
-    }
-
-    // Afficher la vue initiale du prompt au chargement
-    showPromptView();
-
-    // --- Logique pour les boutons/spans de copie --- 
+    // --- Logique pour les boutons/spans de copie --- (Code existant)
     const copyPromptBtn = document.getElementById('copy-prompt-btn');
     const copyResultBtn = document.getElementById('copy-result-btn');
     const resultDiv = document.getElementById('llm-result'); 
-
-    if (copyPromptBtn && fullPromptDiv) { // Utiliser fullPromptDiv
+    if (copyPromptBtn && fullPromptDiv) {
         copyPromptBtn.addEventListener('click', () => {
-            // Copier le contenu textuel de la div
             copyToClipboard(fullPromptDiv.textContent || '', copyPromptBtn); 
         });
     }
-
     if (copyResultBtn && resultDiv) {
         copyResultBtn.addEventListener('click', () => {
             copyToClipboard(resultDiv.textContent || '', copyResultBtn); 
         });
     }
-
-    // Fonction générique pour copier dans le presse-papiers (devrait déjà exister)
     function copyToClipboard(text, buttonElement) {
         if (!text) {
              console.warn("Tentative de copie de texte vide.");
@@ -186,12 +253,11 @@ document.addEventListener('DOMContentLoaded', () => {
              }, 1000);
              return; 
         }
-        
         navigator.clipboard.writeText(text).then(() => {
             buttonElement.classList.add('copied'); 
             setTimeout(() => {
                 buttonElement.classList.remove('copied');
-            }, 1500); 
+            }, 375);
         }).catch(err => {
             console.error('Erreur lors de la copie: ', err);
             buttonElement.classList.add('copy-error'); 
@@ -201,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Logique Chatbot --- 
+    // --- Logique Chatbot --- (Code existant)
     const chatbotFab = document.getElementById('chatbot-fab');
     const chatbotWindow = document.getElementById('chatbot-window');
     const closeChatbotBtn = document.getElementById('close-chatbot-btn');
@@ -210,79 +276,61 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatSendBtn = document.getElementById('chat-send-btn');
     const chatSuggestions = document.getElementById('chat-suggestions');
     const chatbotSystemMessage = "Tu es mon coach en IA. Tu es un expert en prompt ingénierie, tu connais parfaitement comment créer des prompt parfait pour le LLM Mistral 7B";
-    const apiKey = "76cwpvjZqnFw1U0jLCEBKOHh5FprX2OJ"; // !!! Même clé API que pour les prompts - A SÉCURISER IDÉALEMENT !!!
-    let conversationHistory = [{ role: "system", content: chatbotSystemMessage }]; // Initialise avec le message système
+    const apiKeyChat = "76cwpvjZqnFw1U0jLCEBKOHh5FprX2OJ"; // Utiliser une variable différente si clé différente
+    let conversationHistory = [{ role: "system", content: chatbotSystemMessage }];
 
-    // Fonction pour afficher un message dans le chat
     function displayChatMessage(message, sender) {
+        if (!chatHistory) return; // Vérifier si chatHistory existe
         const messageElement = document.createElement('div');
         messageElement.classList.add('chat-message', sender === 'user' ? 'user-message' : 'bot-message');
         messageElement.textContent = message;
         chatHistory.appendChild(messageElement);
-        // Scroll vers le bas pour voir le dernier message
         chatHistory.scrollTop = chatHistory.scrollHeight;
     }
 
-    // Fonction pour appeler l'API Mistral pour le chatbot
     async function callChatbotApi(userMessage) {
-        displayChatMessage(userMessage, 'user'); // Affiche le message utilisateur
+        if (!chatInput) return;
+        displayChatMessage(userMessage, 'user');
         conversationHistory.push({ role: "user", content: userMessage });
-        chatInput.value = ''; // Vide l'input
-        displayChatMessage("Réflexion en cours...", 'bot'); // Message d'attente
-
+        chatInput.value = '';
+        displayChatMessage("Réflexion en cours...", 'bot');
         try {
             const response = await fetch("https://api.mistral.ai/v1/chat/completions", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     "Accept": "application/json",
-                    "Authorization": `Bearer ${apiKey}`
+                    "Authorization": `Bearer ${apiKeyChat}`
                 },
-                body: JSON.stringify({
-                    model: "mistral-tiny", // Ou un autre modèle si nécessaire
-                    messages: conversationHistory // Envoie tout l'historique
-                })
+                body: JSON.stringify({ model: "mistral-tiny", messages: conversationHistory })
             });
-
-            // Supprime le message "Réflexion en cours..."
-            const thinkingMessage = chatHistory.querySelector(".bot-message:last-child");
+            const thinkingMessage = chatHistory?.querySelector(".bot-message:last-child");
             if (thinkingMessage && thinkingMessage.textContent === "Réflexion en cours...") {
                 thinkingMessage.remove();
             }
-
             if (!response.ok) {
-                const errorData = await response.json();
+                const errorData = await response.json().catch(() => ({message: "Erreur inconnue"}));
                 console.error("Erreur API Chatbot:", errorData);
                 displayChatMessage(`Erreur: ${errorData.message || response.statusText}`, 'bot');
-                // Ne pas ajouter le message d'erreur à l'historique pour l'API
                 return;
             }
-
             const resultData = await response.json();
-            let botReply = "Désolé, je n'ai pas pu obtenir de réponse."; // Default
-
+            let botReply = "Désolé, je n'ai pas pu obtenir de réponse.";
             if (resultData.choices && resultData.choices.length > 0 && resultData.choices[0].message) {
                  botReply = resultData.choices[0].message.content;
-            } else {
-                 console.warn("Format de réponse chatbot inattendu:", resultData);
             }
-
             displayChatMessage(botReply, 'bot');
-            conversationHistory.push({ role: "assistant", content: botReply }); // Ajoute la réponse du bot à l'historique
-
+            conversationHistory.push({ role: "assistant", content: botReply });
         } catch (error) {
-             // Supprime le message "Réflexion en cours..." en cas d'erreur réseau aussi
-             const thinkingMessage = chatHistory.querySelector(".bot-message:last-child");
+             const thinkingMessage = chatHistory?.querySelector(".bot-message:last-child");
              if (thinkingMessage && thinkingMessage.textContent === "Réflexion en cours...") {
                  thinkingMessage.remove();
              }
             console.error("Erreur lors de l'appel API Chatbot:", error);
             displayChatMessage(`Erreur de communication: ${error.message}`, 'bot');
-            // Ne pas ajouter ce message d'erreur à l'historique pour l'API
         }
     }
 
-    // Gérer l'ouverture/fermeture du chat
     if (chatbotFab) {
         chatbotFab.addEventListener('click', () => {
             if (chatbotWindow) chatbotWindow.style.display = 'flex';
@@ -293,34 +341,26 @@ document.addEventListener('DOMContentLoaded', () => {
             if (chatbotWindow) chatbotWindow.style.display = 'none';
         });
     }
-
-    // Gérer l'envoi de message
     if (chatSendBtn) {
         chatSendBtn.addEventListener('click', () => {
-            const userMessage = chatInput.value.trim();
-            if (userMessage) {
-                callChatbotApi(userMessage);
-            }
+            if(chatInput?.value.trim()) callChatbotApi(chatInput.value.trim());
         });
     }
     if (chatInput) {
          chatInput.addEventListener('keypress', (event) => {
-             if (event.key === 'Enter') {
-                 const userMessage = chatInput.value.trim();
-                 if (userMessage) {
-                     callChatbotApi(userMessage);
-                 }
+             if (event.key === 'Enter' && chatInput.value.trim()) {
+                 callChatbotApi(chatInput.value.trim());
              }
          });
     }
-
-    // Gérer les clics sur les suggestions
     if (chatSuggestions) {
         chatSuggestions.addEventListener('click', (event) => {
             if (event.target.tagName === 'BUTTON') {
-                const suggestionText = event.target.textContent;
-                callChatbotApi(suggestionText);
+                callChatbotApi(event.target.textContent);
             }
         });
     }
+
+    // Afficher la vue initiale du prompt au chargement
+    showPromptView();
 }); 

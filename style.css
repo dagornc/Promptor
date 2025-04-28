@@ -1,0 +1,187 @@
+/* Styles généraux */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Styles du menu de navigation */
+.navigation-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navigation-menu li {
+    margin-left: 1.5rem;
+}
+
+.navigation-menu a {
+    text-decoration: none;
+    color: #333;
+}
+
+.navigation-menu a:hover {
+    color: #007bff;
+}
+
+/* Styles du bouton Hamburger */
+.hamburger {
+    display: none; /* Caché par défaut sur les grands écrans */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    position: absolute;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.hamburger-inner {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: '';
+    display: block;
+}
+
+.hamburger-inner::before {
+    top: -10px;
+}
+
+.hamburger-inner::after {
+    bottom: -10px;
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+    .navigation-menu {
+        display: none; /* Cache le menu normal sur mobile */
+        position: absolute;
+        top: 60px; /* Ajustez selon la hauteur de votre header */
+        left: 0;
+        width: 100%;
+        background-color: #f4f4f4;
+        flex-direction: column;
+        padding: 1rem 0;
+        border-top: 1px solid #ddd;
+    }
+
+    .navigation-menu.active {
+        display: flex; /* Affiche le menu lorsqu'il est actif */
+    }
+
+    .navigation-menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navigation-menu li {
+        margin: 0;
+        text-align: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .navigation-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .hamburger {
+        display: block; /* Affiche le bouton hamburger sur mobile */
+    }
+
+    /* Animation du hamburger en croix */
+    .hamburger.active .hamburger-inner {
+        transform: rotate(45deg);
+    }
+    .hamburger.active .hamburger-inner::before {
+        top: 0;
+        transform: rotate(-45deg);
+        transition-delay: 0.1s;
+    }
+    .hamburger.active .hamburger-inner::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+        transition-delay: 0.1s;
+    }
+}
+
+main {
+    padding: 1rem;
+}
+
+/* Styles pour les boutons de copie */
+.press-copy-btn {
+    cursor: pointer;
+    padding: 5px;
+    border: 2px solid transparent; /* Bordure transparente initiale */
+    transition: border-color 0.3s ease; /* Transition douce pour la bordure */
+    display: inline-flex; /* Pour aligner l'icône et l'image */
+    align-items: center;
+    position: relative; /* Pour positionner l'image de feedback */
+}
+
+.press-copy-btn .copy-trigger {
+    display: inline-block; /* Afficher l'icône par défaut */
+}
+
+.press-copy-btn .copy-feedback-img {
+    display: none; /* Cacher l'image de feedback par défaut */
+    width: 16px; /* Ajuster la taille si nécessaire */
+    height: 16px;
+    margin-left: 5px; /* Espace entre icône et image */
+}
+
+/* Style au clic (ajout de la classe 'copied') */
+.press-copy-btn.copied {
+    border-color: darkblue; /* Bordure bleu foncé */
+}
+
+/* Cache l'icône et ne montre *pas* l'image quand 'copied' */
+.press-copy-btn.copied .copy-trigger {
+     /* L'icône reste visible ou peut être cachée si souhaité: display: none; */
+     /* Pour l'instant, on ne fait rien, juste la bordure change */
+}
+
+.press-copy-btn.copied .copy-feedback-img {
+    display: none; /* Assure que l'image reste cachée */
+}
+
+/* Style en cas d'erreur */
+.press-copy-btn.copy-error {
+    border-color: red; /* Optionnel: indiquer une erreur */
+} 

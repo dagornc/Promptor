@@ -13,9 +13,19 @@
         <!-- Le header pourrait contenir le logo Naval Group et le titre principal -->
         <img src="images/logo-naval-group.png" alt="Logo Naval Group" class="logo">
         <h1>Bibliothèque de Prompts</h1>
-        <button id="dark-mode-toggle" title="Changer le thème">
-            <span id="dark-mode-icon">🌙</span> <!-- Icône initiale (lune) -->
+
+        <!-- Bouton Hamburger pour mobile -->
+        <button class="sidebar-toggle" id="sidebar-toggle-button" aria-controls="prompt-categories" aria-expanded="false">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
         </button>
+
+        <!-- Bouton Dark Mode (Icône simple) -->
+        <button id="dark-mode-toggle-btn" class="icon-button" title="Activer/Désactiver le mode sombre">
+            <span id="dark-mode-icon">🌙</span> <!-- Icône initiale -->
+        </button>
+
     </header>
 
     <div class="page-wrapper"> <!-- Ajout du wrapper -->
@@ -153,7 +163,7 @@
                 <div class="label-line" id="prompt-label-line">
                      <span id="copy-prompt-btn" class="press-copy-btn" title="Copier le prompt">
                         <span class="copy-trigger">📋</span>
-                        <img src="images/presse.png" alt="Copié!" class="copy-feedback-img">
+                        
                      </span>
                      <label for="full-prompt">Prompt à compléter (remplace le texte entre crochets par ce que tu veux)</label>
                 </div>
@@ -164,7 +174,7 @@
                  <div class="label-line" id="result-label-line">
                     <span id="copy-result-btn" class="press-copy-btn" title="Copier le résultat">
                         <span class="copy-trigger">📋</span>
-                        <img src="images/presse.png" alt="Copié!" class="copy-feedback-img">
+                        
                     </span>
                     <label for="llm-result">Réponse du LLM</label>
                 </div>
@@ -209,6 +219,9 @@
             <button id="chat-send-btn">Envoyer</button>
         </div>
     </div>
+
+    <!-- Overlay pour fermer la sidebar sur mobile -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
 </body>
 </html> 

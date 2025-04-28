@@ -31,7 +31,7 @@ header h1 {
 }
 
 footer {
-    background-color: #333;
+    background-color: #002B5B; /* Changé pour correspondre au header */
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -137,12 +137,12 @@ main {
 .prompt-display-div, .llm-output {
     border: 1px solid #ccc;
     padding: 10px;
-    min-height: 100px; /* Hauteur minimale */
-    max-height: 40vh; /* Hauteur maximale avant d'afficher le scroll */
+    min-height: 200px; /* Hauteur minimale doublée */
+    max-height: 60vh; /* Hauteur maximale augmentée */
     background-color: white;
     white-space: pre-wrap; /* Conserve les sauts de ligne et espaces */
     word-wrap: break-word; /* Coupe les mots longs */
-    overflow-y: auto; /* Assure le scroll vertical */
+    overflow-y: auto; /* Assure le scroll vertical interne */
 }
 
 .prompt-display-div[contenteditable="true"]:focus {
@@ -186,7 +186,7 @@ body.dark-mode header {
 }
 
 body.dark-mode footer {
-    background-color: #1a1a1a;
+    background-color: #1a1a1a; /* Correspond déjà au header sombre */
     color: #ccc;
 }
 
@@ -208,7 +208,7 @@ body.dark-mode .llm-output {
     background-color: #555;
     border-color: #777;
     color: #f4f4f4;
-    /* overflow-y: auto; est hérité */
+    /* Les autres propriétés sont héritées */
 }
 
 body.dark-mode #run-prompt-btn {
@@ -417,22 +417,43 @@ body.dark-mode #chat-send-btn:hover {
 /* Styles pour la copie */
 .press-copy-btn {
     cursor: pointer;
+    padding: 5px;
+    border: 2px solid transparent; /* Bordure transparente initiale */
+    transition: border-color 0.3s ease; /* Transition douce pour la bordure */
+    display: inline-flex; /* Pour aligner l'icône et l'image */
+    align-items: center;
     position: relative; /* Pour positionner l'image de feedback */
 }
 
-.copy-feedback-img {
-    position: absolute;
-    top: -20px; /* Ajustez pour le positionnement */
-    left: 0;
-    width: 40px; /* Ajustez la taille */
-    height: auto;
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
-    pointer-events: none; /* Évite que l'image bloque le clic */
+.press-copy-btn .copy-trigger {
+    display: inline-block; /* Afficher l'icône par défaut */
+}
+
+.press-copy-btn .copy-feedback-img {
+    display: none; /* Cacher l'image de feedback par défaut */
+    width: 16px; /* Ajuster la taille si nécessaire */
+    height: 16px;
+    margin-left: 5px; /* Espace entre icône et image */
+}
+
+/* Style au clic (ajout de la classe 'copied') */
+.press-copy-btn.copied {
+    border-color: darkblue; /* Bordure bleu foncé */
+}
+
+/* Cache l'icône et ne montre *pas* l'image quand 'copied' */
+.press-copy-btn.copied .copy-trigger {
+     /* L'icône reste visible ou peut être cachée si souhaité: display: none; */
+     /* Pour l'instant, on ne fait rien, juste la bordure change */
 }
 
 .press-copy-btn.copied .copy-feedback-img {
-    opacity: 1;
+    display: none; /* Assure que l'image reste cachée */
+}
+
+/* Style en cas d'erreur */
+.press-copy-btn.copy-error {
+    border-color: red; /* Optionnel: indiquer une erreur */
 }
 
 /* Style pour les placeholders de prompt */
@@ -440,4 +461,185 @@ body.dark-mode #chat-send-btn:hover {
     font-weight: bold; /* Met le texte en gras */
     /* Optionnel : ajouter une couleur ou autre style distinctif */
     /* color: #d9534f; */
+}
+
+/* --- Styles du bouton Hamburger Sidebar --- */
+.sidebar-toggle {
+    display: none; /* Caché par défaut sur grand écran */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: auto; /* Pousse le bouton vers la droite */
+    margin-right: 10px; /* Espace avant le bouton dark mode */
+    z-index: 1050;
+}
+
+.sidebar-toggle .hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.sidebar-toggle .hamburger-inner,
+.sidebar-toggle .hamburger-inner::before,
+.sidebar-toggle .hamburger-inner::after {
+    width: 100%;
+    height: 3px;
+    background-color: white; /* Couleur des barres */
+    position: absolute;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+body.dark-mode .sidebar-toggle .hamburger-inner,
+body.dark-mode .sidebar-toggle .hamburger-inner::before,
+body.dark-mode .sidebar-toggle .hamburger-inner::after {
+    background-color: #e0e0e0;
+}
+
+.sidebar-toggle .hamburger-inner {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sidebar-toggle .hamburger-inner::before,
+.sidebar-toggle .hamburger-inner::after {
+    content: '';
+    display: block;
+}
+
+.sidebar-toggle .hamburger-inner::before {
+    top: -10px;
+}
+
+.sidebar-toggle .hamburger-inner::after {
+    bottom: -10px;
+}
+
+/* Animation en croix */
+.sidebar-toggle.active .hamburger-inner {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.sidebar-toggle.active .hamburger-inner::before {
+    top: 0;
+    transform: rotate(-45deg);
+    transition-delay: 0.1s;
+}
+
+.sidebar-toggle.active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(45deg); /* Correction rotation */
+    transition-delay: 0.1s;
+}
+
+/* --- Styles Responsives --- */
+
+@media (max-width: 768px) {
+    /* Masquer la sidebar par défaut */
+    .sidebar {
+        position: fixed; /* Pour pouvoir la faire glisser par dessus */
+        left: -260px; /* Largeur + un peu de marge, cachée à gauche */
+        top: 0;
+        height: 100%;
+        z-index: 1000;
+        transition: left 0.3s ease-in-out;
+        border-right: 1px solid #ccc; /* Garder la bordure */
+        width: 250px; /* Garder la largeur définie */
+        padding: 15px; /* Garder le padding */
+        /* Assurer que le fond est opaque */
+        background-color: #e9ecef;
+    }
+
+    body.dark-mode .sidebar {
+        background-color: #444;
+        border-right: 1px solid #555;
+    }
+
+    /* Afficher la sidebar quand active */
+    body.sidebar-mobile-active .sidebar {
+        left: 0; /* La fait apparaître */
+        box-shadow: 3px 0px 15px rgba(0,0,0,0.2); /* Ajouter une ombre */
+    }
+
+    /* Afficher le bouton hamburger */
+    .sidebar-toggle {
+        display: block;
+    }
+
+    /* Cacher la poignée de redimensionnement */
+    .resizer {
+        display: none;
+    }
+
+    /* Ajuster le header pour faire de la place au hamburger si besoin */
+    header h1 {
+        /* Peut-être réduire un peu la marge si ça ne rentre pas */
+        /* margin-left: 5px; */
+    }
+
+    /* Le reste des styles responsifs existants... */
+    header {
+        padding: 8px 15px;
+    }
+
+    /* header h1 déjà défini plus haut si on décommente*/
+    /* header h1 {
+        font-size: 1.2em; 
+        margin-left: 10px;
+    } */
+
+    .logo {
+        height: 30px;
+    }
+
+    #dark-mode-toggle {
+        font-size: 1em;
+        padding: 4px 6px;
+        /* margin-left: 10px; */ /* Le hamburger a déjà une marge */
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    #chatbot-fab {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    #chatbot-window {
+        width: 90%;
+        max-width: 320px;
+        height: 70%;
+        max-height: 450px;
+        bottom: 75px;
+        right: 15px;
+    }
+
+    .prompt-display-div, .llm-output {
+        font-size: 0.9em;
+    }
+
+}
+
+/* Overlay pour assombrir le contenu quand la sidebar est ouverte sur mobile */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Juste en dessous de la sidebar */
+}
+
+body.sidebar-mobile-active .sidebar-overlay {
+    display: block;
 } 
