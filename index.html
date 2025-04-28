@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bibliothèque de Prompts - Naval Group</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
     <!-- Potentiellement ajouter un lien vers une icône Naval Group ici -->
     <!-- <link rel="icon" href="path/to/favicon.ico" type="image/x-icon"> -->
 </head>
@@ -13,6 +13,9 @@
         <!-- Le header pourrait contenir le logo Naval Group et le titre principal -->
         <img src="images/logo-naval-group.png" alt="Logo Naval Group" class="logo">
         <h1>Bibliothèque de Prompts</h1>
+        <button id="dark-mode-toggle" title="Changer le thème">
+            <span id="dark-mode-icon">🌙</span> <!-- Icône initiale (lune) -->
+        </button>
     </header>
 
     <div class="page-wrapper"> <!-- Ajout du wrapper -->
@@ -128,9 +131,20 @@
                             </ul>
                         </details>
                     </li>
+                    <li>
+                        <details>
+                            <summary>Promptorissime</summary>
+                            <ul>
+                                <li><a href="#" data-prompt="[Etablis  moi un état de lieux du marché des sous-marins militaires dans le monde]&#10;&#10;Definis les  critères d'évaluation du travail demandé puis suis les étapes suivantes sans  t'arreter jusqu'à obtenir une note de 100/100 :&#10;	1.	note ta réponse  de 1 a 100&#10;	2.	améliore ta reponse&#10;	3.	test ta réponse&#10;	4.	corrige ta reponse">Amélioration récursive (une pépite transposable!)</a></li>
+                                <li><a href="#" data-prompt="Prompt Étape 1 :&#10;Tu es un expert en prompt engineering avec une expérience pointue dans le domaine des IA génératives. Tu maitrises toutes les bonnes pratiques et les meilleures techniques pour rédiger les prompts optimaux.&#10;Je souhaite utiliser Mistral 7B pour [obtenir la meillere recette de tarte aux pommes/et pourquoi pas recopier un prompt de la liste plus haut dans le menu !].&#10;Tu vas m'aider à travailler mon prompt. Pour ça, tu vas suivre les instructions suivantes :&#10;{Instructions}&#10;Étape 1 : rédige une première version de prompt pour réaliser ma tâche. Ton prompt doit impérativement intégrer le ou les rôles que doit endosser l'IA pour mener la tâche et une description précise du résultat optimal attendu.&#10;Étape 2 : à partir de ce premier prompt, rédige sous forme de liste à puces 5 variations de ce prompt.&#10;Étape 3 : pour chacune de ces variations et le prompt initial, attribue une note de 0 à 100 au prompt en te basant sur tes connaissances et tes compétences en prompt engineering.&#10;&#10;Prompt Étape 2 :&#10;Ta mission est de rédiger un prompt optimisé pour Mistral 7b. Le prompt doit garantir à l'utilisateur d'obtenir la meilleure réponse possible avec ce LLM. Pour t'aider dans ta mission, voici différents prompts rédigés et notés par le LLM concerné :&#10;**COPIER/COLLER PROMPTS ET NOTES ÉTAPE 1**&#10;Tu vas agir comme un expert en Prompt Engineering spécialisé dans les IA Générative. En te basant sur tes connaissances, tes compétences et les prompts notés que je t'ai partagés, tu vas rédiger le prompt parfait pour le LLM Mistral 7b.&#10;C'est parti et ne t'arrête pas avant d'avoir terminé.&#10;&#10;&#9;2.	Récris le prompt pour le rendre plus précis, clair et concis.&#10;&#9;3.	Répète le processus : relis la version améliorée, trouve de nouveaux axes d'optimisation et récris à nouveau.&#10;&#9;4.	Termine quand aucune amélioration supplémentaire n'est possible.&#10;&#10;&#9;Donne alors la version finale du prompt, parfaite au regard des critères de clarté, de concision et d'efficacité. &#10;&#10;Execute la version finale du prompt">Prompt de promp de prompt</a></li>
+                            </ul>
+                        </details>
+                    </li>
                  </ul>
             </nav>
         </aside>
+
+        <div class="resizer" id="dragHandle"></div> <!-- Poignée de redimensionnement -->
 
         <main>
             <!-- La zone principale pour l'interaction utilisateur (entrée, prompt, sortie) -->
@@ -169,6 +183,7 @@
     </footer>
 
     <script src="js/script.js" defer></script>
+    <script src="js/app.js" defer></script>
 
     <!-- Chatbot Elements -->
     <div id="chatbot-fab">💬</div>
@@ -179,6 +194,7 @@
         </div>
         <div id="chat-history"></div>
         <div id="chat-suggestions">
+            <button>Quels sont les dangers du Shadow IA </button> <!-- Corrigé et déplacé -->
             <button>Comment utiliser un prompt ?</button>
             <button>Qu'est-ce qu'un bon prompt ?</button>
             <button>Aide-moi à choisir une catégorie.</button>
