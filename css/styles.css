@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    background-color: #002B5B; /* Bleu Naval Group */
+    background-color: #002B5B; /* Bleu foncé de la charte */
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -28,6 +28,26 @@ header h1 {
 .logo {
     height: 40px; /* Ajustez la taille selon besoin */
     width: auto;
+}
+
+/* Marque neutre de l'en-tête (le logo employeur a été retiré du dépôt public). */
+span.logo {
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: #002B5B;
+}
+
+span.logo .logo-dot {
+    color: #3fd4e8;
+}
+
+body.dark-mode span.logo {
+    color: #f0f2f5;
 }
 
 footer {
