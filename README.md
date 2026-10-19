@@ -38,6 +38,27 @@ L'application est accessible en ligne via GitHub Pages :
 
 **[https://dagornc.github.io/Promptor/](https://dagornc.github.io/Promptor/)**
 
+## Clé API
+
+L'application appelle l'API Mistral pour exécuter les prompts et alimenter le
+chatbot. **Aucune clé n'est embarquée dans le code** : elle doit être fournie
+par l'utilisateur.
+
+Au premier appel, une invite demande la clé. Elle est ensuite stockée dans le
+navigateur (`localStorage`, clé `mistral_api_key`) et n'est jamais transmise
+ailleurs qu'à `api.mistral.ai`.
+
+Pour obtenir une clé : <https://console.mistral.ai/api-keys>
+
+Pour l'effacer : `localStorage.removeItem('mistral_api_key')` dans la console
+du navigateur.
+
+> **Note d'architecture.** Une clé dans du code client n'est jamais un secret :
+> elle est publique par construction. Ce dépôt a embarqué une clé en clair
+> jusqu'en octobre 2026, ce qui l'exposait à quiconque ouvrait la page. La
+> saisie utilisateur supprime cette exposition. Une architecture de production
+> déplacerait l'appel côté serveur, avec une clé restreinte par domaine.
+
 ## Structure du projet
 
 ```
@@ -46,6 +67,8 @@ Promptor/
 │   └── style.css            # Styles globaux de l'application
 ├── images/                  # Assets visuels
 ├── js/
+│   ├── api-key.js           # Gestion de la clé API (stockage local)
+│   ├── app.js               # Thème, sidebar
 │   └── script.js            # Logique JavaScript principale
 ├── Prompts.txt              # Bibliothèque de prompts (892+ lignes)
 ├── index.html               # Page principale

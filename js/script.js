@@ -174,13 +174,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 return; 
             }
             const fullPrompt = fullPromptDiv.textContent || ''; 
-            const apiKey = "76cwpvjZqnFw1U0jLCEBKOHh5FprX2OJ"; 
+            // La clé n'est plus embarquée : elle est fournie par l'utilisateur
+            // et stockée dans son navigateur (voir js/api-key.js).
+            const apiKey = window.PromptorApiKey.requireApiKey();
             if (!fullPrompt.trim()) {
                 alert("Veuillez d'abord sélectionner ou écrire un prompt.");
                 return;
             }
             if (!apiKey) {
-                alert("Erreur: Clé API manquante."); 
+                alert("Aucune clé API configurée. L'exécution est impossible sans clé.");
                 return;
             }
             const originalButtonText = runPromptBtn.textContent;
@@ -276,7 +278,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatSendBtn = document.getElementById('chat-send-btn');
     const chatSuggestions = document.getElementById('chat-suggestions');
     const chatbotSystemMessage = "Tu es mon coach en IA. Tu es un expert en prompt ingénierie, tu connais parfaitement comment créer des prompt parfait pour le LLM Mistral 7B";
-    const apiKeyChat = "76cwpvjZqnFw1U0jLCEBKOHh5FprX2OJ"; // Utiliser une variable différente si clé différente
+    // La clé n'est plus embarquée : elle est fournie par l'utilisateur
+    // et stockée dans son navigateur (voir js/api-key.js).
     let conversationHistory = [{ role: "system", content: chatbotSystemMessage }];
 
     function displayChatMessage(message, sender) {
@@ -290,6 +293,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function callChatbotApi(userMessage) {
         if (!chatInput) return;
+        const apiKeyChat = window.PromptorApiKey.requireApiKey();
+        if (!apiKeyChat) {
+            displayChatMessage("Aucune clé API configurée. Le chatbot ne peut pas répondre.", 'bot');
+            return;
+        }
         displayChatMessage(userMessage, 'user');
         conversationHistory.push({ role: "user", content: userMessage });
         chatInput.value = '';
